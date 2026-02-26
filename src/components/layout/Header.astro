@@ -1,0 +1,42 @@
+<!-- src/components/layout/Header.astro -->
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const navItems = [
+  { label: "자기소개", href: "#about" },
+  { label: "기술 스택", href: "#tech" },
+  { label: "프로젝트", href: "#projects" },
+  { label: "활동", href: "#journey" },
+  { label: "연락처", href: "#contact" },
+];
+---
+
+<header class="hidden lg:flex w-full sticky top-0 left-0 right-0 h-[72px] items-center justify-between px-6 z-50 bg-[rgba(245,245,245,0.10)] backdrop-blur-md">
+  
+  <!-- Logo -->
+  <a href="/" class="flex items-center">
+    <img
+      src="/logo.svg"
+      alt="JungWJ"
+      class="h-[35px] w-auto"
+    />
+  </a>
+
+  <!-- Center Navigation -->
+  <nav class="w-full max-w-[600px] flex items-center justify-between text-base text-white/70">
+    {navItems.map(item => (
+      <a
+        href={item.href}
+        class="w-full max-w-[120px] text-center py-1.5 px-2 font-medium hover:border-b-2 hover:border-white transition-all"
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
+
+  <!-- Right Area -->
+  <div class="flex items-center">
+    <LanguageSwitcher />
+  </div>
+
+</header>
