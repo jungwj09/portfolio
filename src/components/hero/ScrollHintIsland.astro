@@ -1,0 +1,33 @@
+---
+import { ChevronDown } from 'lucide-astro';
+---
+
+<div
+  id="scroll-hint-wrapper"
+  class="absolute bottom-28 w-full flex justify-center transition-opacity duration-500"
+>
+  <button
+    id="scroll-hint"
+    class="flex items-center gap-3 px-6 py-3 rounded-full bg-[#285798] text-white text-sm font-medium cursor-pointer shadow-lg animate-float"
+  >
+    <ChevronDown size={18} />
+    아래로 스크롤하여 자세한 내용을 확인하세요
+  </button>
+</div>
+
+<script>
+  const wrapper = document.getElementById('scroll-hint-wrapper');
+
+  const hide = () => {
+    wrapper?.classList.add('opacity-0', 'pointer-events-none');
+  };
+
+  document.getElementById('scroll-hint')?.addEventListener('click', () => {
+    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    hide();
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) hide();
+  }, { passive: true });
+</script>
