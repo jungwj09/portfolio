@@ -60,8 +60,19 @@
     <div class="flex gap-4">
       <span class="text-[#858585] select-none w-4 text-right">7</span>
       <span class="whitespace-nowrap">
-        <span class="text-[#4FC1FF]">developer</span><span class="text-white">.</span><span class="text-[#DCDCAA]">build</span><span class="text-white">();</span>
+        <span class="text-[#4FC1FF]">developer</span><span class="text-white">.</span><span class="text-[#DCDCAA]">build</span><span class="text-white">();</span><span class="cursor-blink text-white">|</span>
       </span>
     </div>
   </div>
 </div>
+
+<style>
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-start infinite;
+  }
+</style>

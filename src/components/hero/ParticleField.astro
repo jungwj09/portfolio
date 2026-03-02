@@ -1,0 +1,49 @@
+---
+---
+
+<div id="tsparticles" class="fixed inset-0 w-full h-full pointer-events-none z-0"></div>
+
+<script>
+  import { tsParticles } from "@tsparticles/engine";
+  import { loadSlim } from "@tsparticles/slim";
+
+  await loadSlim(tsParticles);
+
+  await tsParticles.load({
+    id: "tsparticles",
+    options: {
+      background: { color: { value: "transparent" } },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 100, density: { enable: true } },
+        color: { value: "#F5EB98" },
+        opacity: { value: { min: 0.3, max: 0.7 } },
+        size: { value: { min: 1.5, max: 3 } },
+        move: {
+          enable: true,
+          speed: 0.8,
+          direction: "none",
+          outModes: { default: "bounce" },
+        },
+        links: {
+          enable: true,
+          distance: 200,
+          color: "#F5EB98",
+          opacity: 0.4,
+          width: 1,
+        },
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "grab" },
+          onClick: { enable: true, mode: "push" },
+        },
+        modes: {
+          grab: { distance: 160, links: { opacity: 0.6 } },
+          push: { quantity: 3 },
+        },
+      },
+      detectRetina: true,
+    },
+  });
+</script>

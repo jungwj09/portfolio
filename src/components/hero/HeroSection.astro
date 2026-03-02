@@ -3,17 +3,20 @@ import { Github, Linkedin, Mail, Instagram } from 'lucide-astro';
 import CodeEditorMock from './CodeEditorMock.astro';
 import ScrollHintIsland from './ScrollHintIsland.astro';
 import Tag from './Tag.astro';
+import ParticleField from './ParticleField.astro';
 ---
 
-<section class="relative min-h-screen flex flex-col items-center justify-center px-32">
-  <div class="flex flex-col lg:flex-row items-center justify-between w-full gap-16 -translate-y-16">
+<section class="relative min-h-screen flex flex-col items-center justify-center px-32 overflow-hidden">
+  <ParticleField />
+
+  <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full gap-16 -translate-y-16">
 
     <div class="flex flex-col">
-      <p class="text-white text-4xl font-semibold">
+      <p class="hero-item text-white text-4xl font-semibold opacity-0">
         사람과 사회에 긍정적인 임팩트를 만드는 개발자
       </p>
 
-      <h1 class="mt-[20px] text-[52px] font-bold text-white leading-tight">
+      <h1 class="hero-item mt-[20px] text-[52px] font-bold text-white leading-tight opacity-0">
         <span class="text-[#4086E6] border-b-2 border-[#3b82f6] pb-0.5">
           정우진
         </span>
@@ -22,12 +25,12 @@ import Tag from './Tag.astro';
         </span>
       </h1>
 
-      <div class="mt-[50px] flex gap-3 flex-wrap">
+      <div class="hero-item mt-[50px] flex gap-3 flex-wrap opacity-0">
         <Tag label="Developer" />
         <Tag label="Startup Founder" />
       </div>
 
-      <div class="mt-[50px] flex gap-5 items-center">
+      <div class="hero-item mt-[50px] flex gap-5 items-center opacity-0">
         <a href="https://github.com/jungwj09" target="_blank" aria-label="GitHub"
           class="text-[#767676]">
           <Github size={35} />
@@ -47,7 +50,7 @@ import Tag from './Tag.astro';
       </div>
     </div>
 
-    <div class="flex-shrink-0">
+    <div class="hero-item flex-shrink-0 opacity-0">
       <CodeEditorMock />
     </div>
 
@@ -55,3 +58,29 @@ import Tag from './Tag.astro';
 
   <ScrollHintIsland />
 </section>
+
+<style>
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-item.visible {
+    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+</style>
+
+<script>
+  const items = document.querySelectorAll('.hero-item');
+  items.forEach((el, i) => {
+    setTimeout(() => {
+      el.classList.add('visible');
+    }, i * 200);
+  });
+</script>
