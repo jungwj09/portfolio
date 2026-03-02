@@ -1,0 +1,74 @@
+---
+---
+
+<div class="aurora-wrapper fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+  <div class="aurora aurora-4"></div>
+</div>
+
+<style>
+  .aurora-wrapper {
+    background: #0D0D0D;
+  }
+
+  .aurora {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    animation: drift linear infinite;
+  }
+
+  .aurora-1 {
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse, #1a4fa8 0%, #0d2a6e 60%, transparent 100%);
+    top: -10%;
+    left: -5%;
+    animation-duration: 18s;
+    animation-delay: 0s;
+  }
+
+  .aurora-2 {
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, #4086E6 0%, #1a3fa0 50%, transparent 100%);
+    top: 20%;
+    right: -10%;
+    animation-duration: 22s;
+    animation-delay: -6s;
+    opacity: 0.18;
+  }
+
+  .aurora-3 {
+    width: 500px;
+    height: 600px;
+    background: radial-gradient(ellipse, #0e3d8f 0%, #061d5c 55%, transparent 100%);
+    bottom: -15%;
+    left: 30%;
+    animation-duration: 26s;
+    animation-delay: -12s;
+    opacity: 0.2;
+  }
+
+  .aurora-4 {
+    width: 400px;
+    height: 350px;
+    background: radial-gradient(ellipse, #6aaaf5 0%, #2a64c8 50%, transparent 100%);
+    top: 50%;
+    left: 15%;
+    animation-duration: 20s;
+    animation-delay: -4s;
+    opacity: 0.12;
+  }
+
+  @keyframes drift {
+    0%   { transform: translate(0px, 0px) scale(1); }
+    25%  { transform: translate(40px, -30px) scale(1.05); }
+    50%  { transform: translate(20px, 50px) scale(0.96); }
+    75%  { transform: translate(-30px, 20px) scale(1.03); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+</style>
