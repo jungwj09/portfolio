@@ -1,0 +1,103 @@
+---
+---
+
+<section id="about" class="relative w-full py-12 px-32 overflow-hidden">
+
+  <div class="mb-9">
+    <h2 class="text-4xl font-bold text-white">자기소개</h2>
+    <p class="mt-2 text-[#828282] text-xl">저를 소개합니다</p>
+  </div>
+
+  <div class="flex flex-col lg:flex-row items-start gap-[114px]">
+
+    <div class="about-item flex-shrink-0 opacity-0">
+      <div class="w-[302px] h-[415px] rounded-[24px] overflow-hidden border border-white/10">
+        <img
+          src="/images/profile/me.webp"
+          alt="정우진 프로필"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-col flex-1">
+
+      <div class="about-item opacity-0">
+        <p class="text-white text-xl font-medium leading-relaxed">
+          안녕하세요👋<br />
+          저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는 개발자 정우진입니다.
+        </p>
+      </div>
+
+      <div class="about-item opacity-0 mt-[20px]">
+        <p class="text-white text-xl font-medium leading-relaxed">
+          <span class="text-[#EAB736] font-semibold">기술의 온기로 더 나은 세상을 설계한다</span>는 신념 아래,<br />
+          사람을 이해하는 기술, 그리고 사회에 긍정적인 임팩트를 남기는 서비스를 만드는 Startup Founder로 성장하고자 노력하고 있습니다.
+        </p>
+      </div>
+
+      <div class="about-item opacity-0 mt-[60px] grid grid-cols-2 gap-x-[40px] gap-y-[25px] w-fit">
+
+        <div class="flex flex-col gap-1">
+          <span class="text-white text-2xl font-semibold">17+</span>
+          <span class="text-[#575757] text-xl font-semibold">완성된 프로젝트</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="text-white text-2xl font-semibold">21+</span>
+          <span class="text-[#575757] text-xl font-semibold">다루는 기술스택</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="text-white text-2xl font-semibold">1</span>
+          <span class="text-[#575757] text-xl font-semibold">수상경력</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="text-white text-2xl font-semibold">1720+</span>
+          <span class="text-[#575757] text-xl font-semibold">GitHub 기여도 (1년)</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .about-item.visible {
+    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+</style>
+
+<script>
+  const items = document.querySelectorAll('#about .about-item');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const index = Array.from(items).indexOf(el);
+          setTimeout(() => {
+            el.classList.add('visible');
+          }, index * 150);
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  items.forEach((el) => observer.observe(el));
+</script>
