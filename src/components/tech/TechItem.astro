@@ -1,0 +1,19 @@
+---
+interface Props {
+  id: string;
+  name: string;
+  icon: string;
+}
+const { id, name, icon } = Astro.props;
+---
+
+<button
+  class="tech-item flex flex-col items-center gap-2 p-4 hover:border-white/25 transition-all duration-200 cursor-pointer group"
+  data-tech-id={id}
+  aria-label={name}
+>
+  <div class="w-12 h-12 flex items-center justify-center">
+    <img src={icon} alt={name} class="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-200" />
+  </div>
+  <span class="text-xs text-white group-hover:text-white transition-colors duration-200 font-medium text-center leading-tight">{name}</span>
+</button>

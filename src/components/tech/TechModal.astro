@@ -1,0 +1,116 @@
+---
+---
+
+<div
+  id="tech-modal-overlay"
+  class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300"
+  style="background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);"
+>
+  <div
+    id="tech-modal"
+    class="relative w-full max-w-md rounded-3xl border border-white/15 p-8 scale-95 transition-transform duration-300"
+    style="background: #141414;"
+  >
+    <button
+      id="tech-modal-close"
+      class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white/70 hover:text-white"
+      aria-label="닫기"
+    >
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-16 h-16 rounded-2xl bg-white/8 border border-white/10 flex items-center justify-center flex-shrink-0">
+        <img id="modal-icon" src="" alt="" class="w-10 h-10 object-contain" />
+      </div>
+      <div>
+        <h3 id="modal-name" class="text-2xl font-bold text-white"></h3>
+        <span id="modal-category" class="text-sm text-[#828282]"></span>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <h4 class="text-xs font-semibold text-[#575757] uppercase tracking-widest mb-2">경험</h4>
+      <p id="modal-description" class="text-[#C0C0C0] text-base leading-relaxed"></p>
+    </div>
+
+    <div id="modal-projects-wrapper">
+      <h4 class="text-xs font-semibold text-[#575757] uppercase tracking-widest mb-3">사용된 프로젝트</h4>
+      <div id="modal-projects" class="flex flex-wrap gap-2"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import techStack from "@/data/tech-stack.json";
+
+  const categoryLabels: Record<string, string> = {
+    frontend: "Frontend",
+    backend: "Backend",
+    app: "App",
+    design: "Design",
+  };
+
+  const overlay = document.getElementById("tech-modal-overlay")!;
+  const modal = document.getElementById("tech-modal")!;
+  const closeBtn = document.getElementById("tech-modal-close")!;
+
+  function openModal(id: string) {
+    const tech = (techStack as any[]).find((t) => t.id === id);
+    if (!tech) return;
+
+    (document.getElementById("modal-icon") as HTMLImageElement).src = tech.icon;
+    (document.getElementById("modal-icon") as HTMLImageElement).alt = tech.name;
+    document.getElementById("modal-name")!.textContent = tech.name;
+    document.getElementById("modal-category")!.textContent = categoryLabels[tech.category] ?? tech.category;
+    document.getElementById("modal-description")!.textContent = tech.description;
+
+    const wrapper = document.getElementById("modal-projects-wrapper")!;
+    const projectsEl = document.getElementById("modal-projects")!;
+    projectsEl.innerHTML = "";
+
+    if (!tech.projects || tech.projects.length === 0) {
+      wrapper.style.display = "none";
+    } else {
+      wrapper.style.display = "block";
+      (tech.projects as string[]).forEach((p) => {
+        const badge = document.createElement("span");
+        badge.className =
+          "px-3 py-1 rounded-full text-sm font-medium text-white/80 border border-white/15 bg-white/8";
+        badge.textContent = p;
+        projectsEl.appendChild(badge);
+      });
+    }
+
+    overlay.classList.remove("opacity-0", "pointer-events-none");
+    overlay.classList.add("opacity-100");
+    modal.classList.remove("scale-95");
+    modal.classList.add("scale-100");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    overlay.classList.remove("opacity-100");
+    overlay.classList.add("opacity-0", "pointer-events-none");
+    modal.classList.remove("scale-100");
+    modal.classList.add("scale-95");
+    document.body.style.overflow = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+
+  document.querySelectorAll(".tech-item").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = (btn as HTMLElement).dataset.techId;
+      if (id) openModal(id);
+    });
+  });
+</script>

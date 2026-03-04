@@ -1,0 +1,80 @@
+---
+import SectionTitle from "@/components/common/SectionTitle.astro";
+import TechItem from "./TechItem.astro";
+import TechModal from "./TechModal.astro";
+import techStack from "@/data/tech-stack.json";
+import { Info } from "lucide-astro";
+
+const categories = [
+  { key: "frontend", label: "Frontend" },
+  { key: "backend",  label: "Backend" },
+  { key: "app",      label: "App" },
+  { key: "design",   label: "Design" },
+];
+---
+
+<section id="tech" class="relative w-full py-12 px-32 overflow-hidden">
+
+    <SectionTitle title="기술 스택" subtitle="제가 다루는 기술들입니다" />
+
+    <div class="flex items-center gap-2 mb-8 text-[#828282] text-sm">
+        <Info
+            size={14}
+            class="flex-shrink-0"
+            stroke-width={1.5}
+        />
+        <span>
+            아이콘을 클릭하면 해당 기술스택의 경험과 사용된 프로젝트를 확인할 수 있습니다.
+        </span>
+    </div>
+
+    <div class="flex flex-col gap-3">
+        {categories.map((cat) => {
+            const items = (techStack as any[]).filter((t) => t.category === cat.key);
+            if (items.length === 0) return null;
+            return (
+                <div class="tech-category opacity-0">
+                    <h3 class="text-sm font-semibold text-[#828282] mb-2 uppercase tracking-widest border-b border-white/10 pb-2">
+                        {cat.label}
+                    </h3>
+                    <div class="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-1">
+                        {items.map((tech) => (
+                            <TechItem id={tech.id} name={tech.name} icon={tech.icon} />
+                        ))}
+                    </div>
+                </div>
+            );
+        })}
+    </div>
+
+</section>
+
+<TechModal />
+
+<style>
+    @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    .tech-category.visible {
+        animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+</style>
+
+<script>
+    const categories = document.querySelectorAll('#tech .tech-category');
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const el = entry.target as HTMLElement;
+                    const index = Array.from(categories).indexOf(el);
+                    setTimeout(() => el.classList.add('visible'), index * 150);
+                    observer.unobserve(el);
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+    categories.forEach((el) => observer.observe(el));
+</script>
