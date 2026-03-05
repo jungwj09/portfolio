@@ -1,4 +1,5 @@
 ---
+import { X } from "lucide-astro";
 ---
 
 <div
@@ -13,12 +14,10 @@
   >
     <button
       id="tech-modal-close"
-      class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white/70 hover:text-white"
+      class="absolute top-5 right-5 flex items-center justify-center transition-colors text-white/70"
       aria-label="닫기"
     >
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+      <X size={20} stroke-width={2} />
     </button>
 
     <div class="flex items-center gap-4 mb-6">

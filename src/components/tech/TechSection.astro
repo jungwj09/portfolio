@@ -33,7 +33,7 @@ const categories = [
             const items = (techStack as any[]).filter((t) => t.category === cat.key);
             if (items.length === 0) return null;
             return (
-                <div class="tech-category opacity-0">
+                <div class="tech-category">
                     <h3 class="text-sm font-semibold text-[#828282] mb-2 uppercase tracking-widest border-b border-white/10 pb-2">
                         {cat.label}
                     </h3>
@@ -50,31 +50,3 @@ const categories = [
 </section>
 
 <TechModal />
-
-<style>
-    @keyframes fadeSlideUp {
-        from { opacity: 0; transform: translateY(24px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
-    .tech-category.visible {
-        animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-</style>
-
-<script>
-    const categories = document.querySelectorAll('#tech .tech-category');
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const el = entry.target as HTMLElement;
-                    const index = Array.from(categories).indexOf(el);
-                    setTimeout(() => el.classList.add('visible'), index * 150);
-                    observer.unobserve(el);
-                }
-            });
-        },
-        { threshold: 0.1 }
-    );
-    categories.forEach((el) => observer.observe(el));
-</script>
