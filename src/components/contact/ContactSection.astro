@@ -1,0 +1,119 @@
+---
+import SectionTitle from "@/components/common/SectionTitle.astro";
+import { Github, Linkedin, Mail, Instagram } from "lucide-astro";
+
+const contacts = [
+  {
+    icon: "mail",
+    label: "Email",
+    value: "woox1jin@gmail.com",
+    href: "mailto:woox1jin@gmail.com",
+    description: "가장 빠르게 답장을 받으실 수 있어요",
+  },
+  {
+    icon: "github",
+    label: "GitHub",
+    value: "github.com/jungwj09",
+    href: "https://github.com/jungwj09",
+    description: "제 코드를 구경해보세요",
+  },
+  {
+    icon: "linkedin",
+    label: "LinkedIn",
+    value: "linkedin.com/in/jungwj09",
+    href: "https://www.linkedin.com/in/jungwj09/",
+    description: "커리어 관련 연락은 여기서",
+  },
+  {
+    icon: "instagram",
+    label: "Instagram",
+    value: "@woox1jin_",
+    href: "https://www.instagram.com/woox1jin_/",
+    description: "일상도 가끔 올려요",
+  },
+];
+---
+
+<section id="contact" class="relative w-full py-12 px-32 pb-32 overflow-hidden">
+  <SectionTitle title="연락처" subtitle="저와 연락하는 방법이에요" />
+
+  <div class="flex flex-col lg:flex-row gap-16 items-start">
+    <div class="flex-shrink-0 max-w-[420px]">
+      <p class="text-white text-xl font-semibold leading-snug">
+        언제든지 편하게 연락주세요☺️
+      </p>
+      <p class="mt-5 text-[#828282] text-base leading-relaxed">
+        협업 제안, 질문, 아이디어 공유 등<br />
+        어떤 내용이든 환영합니다.<br />
+        최대한 빠르게 답장드릴게요.
+      </p>
+
+      <div class="mt-10 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#4086E6]/40 bg-[#4086E6]/8 text-[#4086E6] text-sm font-medium">
+        <span class="w-2 h-2 rounded-full bg-[#4086E6] animate-pulse inline-block"></span>
+        현재 연락 가능합니다
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
+      {contacts.map((c) => (
+        <a
+          href={c.href}
+          target={c.icon !== "mail" ? "_blank" : undefined}
+          rel={c.icon !== "mail" ? "noopener noreferrer" : undefined}
+          class="contact-card group relative flex items-start gap-4 p-5 rounded-[15px] border border-white/10 bg-[#111111] hover:border-[#4086E6]/50 hover:bg-[#0f1a2e] transition-all duration-300 overflow-hidden"
+        >
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="background: radial-gradient(ellipse at 0% 0%, rgba(64,134,230,0.08) 0%, transparent 70%);" />
+
+          <div class="flex-shrink-0 w-11 h-11 rounded-[10px] bg-white/6 border border-white/10 flex items-center justify-center text-[#828282] group-hover:text-[#4086E6] group-hover:border-[#4086E6]/30 group-hover:bg-[#4086E6]/10 transition-all duration-300">
+            {c.icon === "mail" && <Mail size={20} />}
+            {c.icon === "github" && <Github size={20} />}
+            {c.icon === "linkedin" && <Linkedin size={20} />}
+            {c.icon === "instagram" && <Instagram size={20} />}
+          </div>
+
+          <div class="flex flex-col min-w-0">
+            <span class="text-[#828282] text-xs font-semibold uppercase tracking-widest mb-1">{c.label}</span>
+            <span class="text-white text-sm font-medium truncate group-hover:text-[#4086E6] transition-colors duration-200">
+                {c.value}
+            </span>
+            <span class="text-[#575757] text-xs mt-1">{c.description}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-card {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      border-color 0.3s,
+      background 0.3s;
+  }
+  .contact-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".contact-card").forEach((card, i) => {
+    (card as HTMLElement).style.transitionDelay = `${i * 80}ms`;
+    observer.observe(card);
+  });
+</script>
