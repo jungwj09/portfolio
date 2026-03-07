@@ -38,9 +38,13 @@ import { Plus, Minus } from "lucide-astro";
               class="journey-item relative flex items-center w-full"
               style={`min-height: 160px;`}
               data-index={i}
+              data-period={item.period}
+              data-title={item.title}
+              data-description={item.description}
             >
               <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#4086E6] border-2 border-[#4086E6] z-10 flex-shrink-0" />
-              <div class="w-[calc(50%-32px)] pr-6 flex justify-end">
+
+              <div class="card-slot-left w-[calc(50%-32px)] pr-6 flex justify-end">
                 {side === "left" && (
                   <JourneyCard
                     period={item.period}
@@ -51,7 +55,7 @@ import { Plus, Minus } from "lucide-astro";
                 )}
               </div>
 
-              <div class="w-[calc(50%-32px)] ml-auto pl-6 flex justify-start">
+              <div class="card-slot-right w-[calc(50%-32px)] ml-auto pl-6 flex justify-start">
                 {side === "right" && (
                   <JourneyCard
                     period={item.period}
@@ -122,6 +126,34 @@ import { Plus, Minus } from "lucide-astro";
     return Array.from(list.querySelectorAll(".journey-item")) as HTMLElement[];
   }
 
+  function reassignSides() {
+    const items = getItems();
+    items.forEach((item, i) => {
+      const slotLeft = item.querySelector(".card-slot-left") as HTMLElement;
+      const slotRight = item.querySelector(".card-slot-right") as HTMLElement;
+      const card = (slotLeft.firstElementChild ||
+        slotRight.firstElementChild) as HTMLElement | null;
+
+      if (!card) return;
+
+      if (i % 2 === 0) {
+        // 왼쪽으로
+        if (!slotLeft.contains(card)) {
+          slotLeft.appendChild(card);
+        }
+        card.classList.remove("ml-auto");
+        card.classList.add("mr-auto");
+      } else {
+        // 오른쪽으로
+        if (!slotRight.contains(card)) {
+          slotRight.appendChild(card);
+        }
+        card.classList.remove("mr-auto");
+        card.classList.add("ml-auto");
+      }
+    });
+  }
+
   function updateToggleUI() {
     if (isExpanded) {
       iconPlus.style.display = "none";
@@ -171,6 +203,7 @@ import { Plus, Minus } from "lucide-astro";
     btnOld.classList.remove("active-sort");
     btnOld.classList.add("inactive-sort");
     reverseOrder();
+    reassignSides(); // 순서 뒤집은 후 side 재계산
     applyVisibility();
     animateItems();
   });
@@ -183,6 +216,7 @@ import { Plus, Minus } from "lucide-astro";
     btnRecent.classList.remove("active-sort");
     btnRecent.classList.add("inactive-sort");
     reverseOrder();
+    reassignSides(); // 순서 뒤집은 후 side 재계산
     applyVisibility();
     animateItems();
   });
