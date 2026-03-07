@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "sunrin-saemter",
+    "title": "선린샘터",
+    "description": "선린샘터는 선린인터넷고 교내 선생님들의 교무실 자리 위치 및 부재 여부를 확인할 수 있는 서비스에요.",
+    "thumbnail": "/images/projects/example-image.png",
+    "techStack": ["React", "Electron"]
+  },
+  {
+    "slug": "gitbyeo",
+    "title": "깃벼",
+    "description": "깃벼는 AI 기반 커밋메시지 분석 및 피드백 제공 솔루션과 개발자 커뮤니티를 갖춘 개발자 역량 관리 및 성장 기록 플랫폼이에요.",
+    "thumbnail": "/images/projects/example-image.png",
+    "techStack": ["Next.js", "Tailwind CSS"]
+  },
+  {
+    "slug": "linka",
+    "title": "LINKA",
+    "description": "LINKA는 AI 기반 유사 사기 범죄 피해자 매칭 및 초기 법적 공동대응 지원 플랫폼으로, 동일 가해자나 유사 수법으로 사기를 당한 피해자들을 연결하여 공동 대응을 돕는 서비스에요.",
+    "thumbnail": "/images/projects/example-image.png",
+    "techStack": ["Next.js", "Tailwind CSS"]
+  },
+  {
+    "slug": "teamello",
+    "title": "Teamello",
+    "description": "Teamello는 부드러운 팀워크를 위한 AI 기반 갈등 사전 예방 및 협업 관리 플랫폼이에요",
+    "thumbnail": "/images/projects/example-image.png",
+    "techStack": ["Next.js", "Tailwind CSS", "Supabase"]
+  }
+]

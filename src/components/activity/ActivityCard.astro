@@ -1,16 +1,18 @@
 ---
 interface Props {
-    period: string;
-    title: string;
-    description: string;
-    side: "left" | "right";
+  period: string;
+  title: string;
+  description: string;
+  side: "left" | "right";
 }
 
 const { period, title, description, side } = Astro.props;
 ---
 
-<div class={`journey-card w-full max-w-[592px] rounded-[15px] border border-[#8E8E8E] bg-[#DADADA] p-6 flex flex-col gap-3 ${side === "left" ? "mr-auto" : "ml-auto"}`}>
-    <span class="text-[#595959] text-sm">{period}</span>
-    <h3 class="text-black text-xl font-semibold">{title}</h3>
-    <p class="text-black text-base leading-relaxed">{description}</p>
+<div
+  class={`journey-card w-full max-w-[592px] rounded-[15px] border border-[#8E8E8E] bg-[#DADADA] p-6 flex flex-col gap-3 ${side === "left" ? "mr-auto" : "ml-auto"}`}
+>
+  <span class="text-[#595959] text-sm">{period}</span>
+  <h3 class="text-black text-xl font-semibold">{title}</h3>
+  <p class="text-black text-base leading-relaxed">{description}</p>
 </div>
