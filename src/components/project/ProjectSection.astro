@@ -1,0 +1,23 @@
+---
+import SectionTitle from "@/components/common/SectionTitle.astro";
+import ProjectCard from "./ProjectCard.astro";
+import projects from "@/data/projects.json";
+---
+
+<section id="projects" class="relative w-full py-12 px-32 overflow-hidden">
+
+  <SectionTitle title="프로젝트" subtitle="제가 지금까지 진행했던 프로젝트들이에요" />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    {(projects as any[]).map((project) => (
+      <ProjectCard
+        slug={project.slug}
+        title={project.title}
+        description={project.description}
+        thumbnail={project.thumbnail}
+        techStack={project.techStack}
+      />
+    ))}
+  </div>
+
+</section>
