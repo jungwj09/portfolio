@@ -6,9 +6,9 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
   <SectionTitle title="자기소개" subtitle="저를 소개합니다" />
 
   <div
-    class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-[114px]"
+    class="flex flex-col md:flex-row items-start md:items-start gap-8 md:gap-[114px]"
   >
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0 flex justify-center w-full md:w-auto">
       <div
         class="w-[200px] h-[275px] md:w-[302px] md:h-[415px] rounded-[15px] overflow-hidden border border-white/10"
       >
@@ -23,7 +23,7 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
     <div class="flex flex-col flex-1">
       <div>
         <p
-          class="text-white text-base md:text-xl font-medium leading-relaxed text-center md:text-left"
+          class="text-white text-base md:text-xl font-medium leading-relaxed text-left"
         >
           안녕하세요👋<br />
           저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는 개발자 정우진입니다.
@@ -32,7 +32,7 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
 
       <div class="mt-4 md:mt-[20px]">
         <p
-          class="text-white text-base md:text-xl font-medium leading-relaxed text-center md:text-left"
+          class="text-white text-base md:text-xl font-medium leading-relaxed text-left"
         >
           <span class="text-[#EAB736] font-semibold"
             >기술의 온기로 더 나은 세상을 설계한다</span
@@ -42,36 +42,49 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
         </p>
       </div>
 
-      <div
-        class="mt-8 md:mt-[60px] grid grid-cols-2 gap-x-6 md:gap-x-[40px] gap-y-4 md:gap-y-[25px] w-full md:w-fit"
-      >
-        <div class="flex flex-col gap-0.5 md:gap-1 items-center md:items-start">
-          <span class="text-white text-xl md:text-2xl font-semibold">17+</span>
-          <span class="text-[#575757] text-sm md:text-xl font-semibold"
-            >완성된 프로젝트</span
+      <div class="mt-8 md:mt-[60px] flex justify-start w-full">
+        <div
+          class="grid grid-cols-2 gap-x-6 md:gap-x-[40px] gap-y-4 md:gap-y-[25px]"
+        >
+          <div
+            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
           >
-        </div>
+            <span class="text-white text-xl md:text-2xl font-semibold">17+</span
+            >
+            <span class="text-[#575757] text-sm md:text-xl font-semibold">
+              완성된 프로젝트
+            </span>
+          </div>
 
-        <div class="flex flex-col gap-0.5 md:gap-1 items-center md:items-start">
-          <span class="text-white text-xl md:text-2xl font-semibold">19+</span>
-          <span class="text-[#575757] text-sm md:text-xl font-semibold"
-            >다루는 기술스택</span
+          <div
+            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
           >
-        </div>
+            <span class="text-white text-xl md:text-2xl font-semibold">19+</span
+            >
+            <span class="text-[#575757] text-sm md:text-xl font-semibold">
+              다루는 기술스택
+            </span>
+          </div>
 
-        <div class="flex flex-col gap-0.5 md:gap-1 items-center md:items-start">
-          <span class="text-white text-xl md:text-2xl font-semibold">1</span>
-          <span class="text-[#575757] text-sm md:text-xl font-semibold"
-            >수상경력</span
+          <div
+            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
           >
-        </div>
+            <span class="text-white text-xl md:text-2xl font-semibold">1</span>
+            <span class="text-[#575757] text-sm md:text-xl font-semibold">
+              수상경력
+            </span>
+          </div>
 
-        <div class="flex flex-col gap-0.5 md:gap-1 items-center md:items-start">
-          <span class="text-white text-xl md:text-2xl font-semibold">1720+</span
+          <div
+            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
           >
-          <span class="text-[#575757] text-sm md:text-xl font-semibold"
-            >GitHub 기여도 (1년)</span
-          >
+            <span class="text-white text-xl md:text-2xl font-semibold"
+              >1720+</span
+            >
+            <span class="text-[#575757] text-sm md:text-xl font-semibold">
+              GitHub 기여도
+            </span>
+          </div>
         </div>
       </div>
     </div>

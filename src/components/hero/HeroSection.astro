@@ -15,28 +15,27 @@ import AuroraBackground from "./AuroraBackground.astro";
     class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-16 -translate-y-8 md:-translate-y-16"
   >
     <div
-      class="flex flex-col items-center md:items-start text-center md:text-left"
+      class="flex flex-col items-start md:items-start text-left md:text-left w-full"
     >
       <p
-        class="hero-item text-white text-xl md:text-4xl font-semibold opacity-0 text-balance"
+        class="hero-item text-white text-2xl md:text-4xl font-semibold opacity-0 text-balance leading-tight"
       >
         사람과 사회에 <span class="text-[#EAB736]">긍정적인 임팩트</span>를
         만드는 개발자
       </p>
 
       <h1
-        class="hero-item mt-3 md:mt-[20px] text-[32px] md:text-[52px] font-bold text-white leading-tight opacity-0"
+        class="hero-item mt-4 md:mt-[20px] text-[36px] md:text-[52px] font-bold text-white leading-tight opacity-0"
       >
-        <span class="text-[#4086E6] border-b-2 border-[#3b82f6] pb-0.5">
-          정우진
-        </span>
-        <span class="text-2xl md:text-4xl font-semibold text-white">
-          입니다
-        </span>
+        <span class="text-[#4086E6] border-b-2 border-[#3b82f6] pb-0.5"
+          >정우진</span
+        >
+        <span class="text-2xl md:text-4xl font-semibold text-white">입니다</span
+        >
       </h1>
 
       <div
-        class="hero-item mt-6 md:mt-[50px] flex gap-2 md:gap-3 flex-wrap justify-center md:justify-start opacity-0"
+        class="hero-item mt-6 md:mt-[50px] flex gap-2 md:gap-3 flex-wrap justify-start md:justify-start opacity-0"
       >
         <Tag label="Developer" />
         <Tag label="Startup Founder" />
@@ -78,15 +77,13 @@ import AuroraBackground from "./AuroraBackground.astro";
         </a>
       </div>
 
-      <!-- Code Editor Mock - Mobile (below social icons) -->
       <div
-        class="hero-item md:hidden mt-8 flex-shrink-0 opacity-0 w-full flex justify-center"
+        class="hero-item md:hidden mt-10 flex-shrink-0 opacity-0 w-full flex justify-start"
       >
         <CodeEditorMock />
       </div>
     </div>
 
-    <!-- Code Editor Mock - Desktop (right side) -->
     <div class="hero-item hidden md:block flex-shrink-0 opacity-0">
       <CodeEditorMock />
     </div>

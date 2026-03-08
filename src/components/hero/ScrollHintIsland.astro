@@ -1,14 +1,14 @@
 ---
-import { ChevronDown } from 'lucide-astro';
+import { ChevronDown } from "lucide-astro";
 ---
 
 <div
   id="scroll-hint-wrapper"
-  class="absolute bottom-28 w-full flex justify-center transition-opacity duration-500"
+  class="absolute bottom-10 md:bottom-28 w-full flex justify-center transition-opacity duration-500"
 >
   <button
     id="scroll-hint"
-    class="flex items-center gap-3 px-6 py-3 rounded-full text-sm font-medium cursor-pointer animate-float"
+    class="flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-sm font-medium cursor-pointer animate-float"
     style="
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
@@ -28,18 +28,22 @@ import { ChevronDown } from 'lucide-astro';
 </div>
 
 <script>
-  const wrapper = document.getElementById('scroll-hint-wrapper');
+  const wrapper = document.getElementById("scroll-hint-wrapper");
 
   const hide = () => {
-    wrapper?.classList.add('opacity-0', 'pointer-events-none');
+    wrapper?.classList.add("opacity-0", "pointer-events-none");
   };
 
-  document.getElementById('scroll-hint')?.addEventListener('click', () => {
-    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+  document.getElementById("scroll-hint")?.addEventListener("click", () => {
+    window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
     hide();
   });
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) hide();
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 10) hide();
+    },
+    { passive: true },
+  );
 </script>
