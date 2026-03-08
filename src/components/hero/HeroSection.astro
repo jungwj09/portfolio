@@ -1,59 +1,95 @@
 ---
-import { Github, Linkedin, Mail, Instagram } from 'lucide-astro';
-import CodeEditorMock from './CodeEditorMock.astro';
-import ScrollHintIsland from './ScrollHintIsland.astro';
-import Tag from './Tag.astro';
-import AuroraBackground from './AuroraBackground.astro';
+import { Github, Linkedin, Mail, Instagram } from "lucide-astro";
+import CodeEditorMock from "./CodeEditorMock.astro";
+import ScrollHintIsland from "./ScrollHintIsland.astro";
+import Tag from "./Tag.astro";
+import AuroraBackground from "./AuroraBackground.astro";
 ---
 
-<section class="relative min-h-screen flex flex-col items-center justify-center px-32 overflow-hidden bg-black">
+<section
+  class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-32 overflow-hidden bg-black"
+>
   <AuroraBackground />
 
-  <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full gap-16 -translate-y-16">
-
-    <div class="flex flex-col">
-      <p class="hero-item text-white text-4xl font-semibold opacity-0">
-        사람과 사회에 <span class="text-[#EAB736]">긍정적인 임팩트</span>를 만드는 개발자
+  <div
+    class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-16 -translate-y-8 md:-translate-y-16"
+  >
+    <div
+      class="flex flex-col items-center md:items-start text-center md:text-left"
+    >
+      <p
+        class="hero-item text-white text-xl md:text-4xl font-semibold opacity-0 text-balance"
+      >
+        사람과 사회에 <span class="text-[#EAB736]">긍정적인 임팩트</span>를
+        만드는 개발자
       </p>
 
-      <h1 class="hero-item mt-[20px] text-[52px] font-bold text-white leading-tight opacity-0">
+      <h1
+        class="hero-item mt-3 md:mt-[20px] text-[32px] md:text-[52px] font-bold text-white leading-tight opacity-0"
+      >
         <span class="text-[#4086E6] border-b-2 border-[#3b82f6] pb-0.5">
           정우진
         </span>
-        <span class="text-4xl font-semibold text-white">
+        <span class="text-2xl md:text-4xl font-semibold text-white">
           입니다
         </span>
       </h1>
 
-      <div class="hero-item mt-[50px] flex gap-3 flex-wrap opacity-0">
+      <div
+        class="hero-item mt-6 md:mt-[50px] flex gap-2 md:gap-3 flex-wrap justify-center md:justify-start opacity-0"
+      >
         <Tag label="Developer" />
         <Tag label="Startup Founder" />
       </div>
 
-      <div class="hero-item mt-[50px] flex gap-8 items-center opacity-0">
-        <a href="https://github.com/jungwj09" target="_blank" aria-label="GitHub"
-          class="text-[#8D8D8D]">
-          <Github size={40} />
+      <div
+        class="hero-item mt-6 md:mt-[50px] flex gap-5 md:gap-8 items-center opacity-0"
+      >
+        <a
+          href="https://github.com/jungwj09"
+          target="_blank"
+          aria-label="GitHub"
+          class="text-[#8D8D8D] hover:text-white transition-colors"
+        >
+          <Github class="w-7 h-7 md:w-10 md:h-10" />
         </a>
-        <a href="https://www.linkedin.com/in/jungwj09/" target="_blank" aria-label="LinkedIn"
-          class="text-[#8D8D8D]">
-          <Linkedin size={40} />
+        <a
+          href="https://www.linkedin.com/in/jungwj09/"
+          target="_blank"
+          aria-label="LinkedIn"
+          class="text-[#8D8D8D] hover:text-white transition-colors"
+        >
+          <Linkedin class="w-7 h-7 md:w-10 md:h-10" />
         </a>
-        <a href="mailto:woox1jin@gmail.com" aria-label="Email"
-          class="text-[#8D8D8D]">
-          <Mail size={40} />
+        <a
+          href="mailto:woox1jin@gmail.com"
+          aria-label="Email"
+          class="text-[#8D8D8D] hover:text-white transition-colors"
+        >
+          <Mail class="w-7 h-7 md:w-10 md:h-10" />
         </a>
-        <a href="https://www.instagram.com/woox1jin_/" target="_blank" aria-label="Instagram"
-          class="text-[#8D8D8D]">
-          <Instagram size={40} />
+        <a
+          href="https://www.instagram.com/woox1jin_/"
+          target="_blank"
+          aria-label="Instagram"
+          class="text-[#8D8D8D] hover:text-white transition-colors"
+        >
+          <Instagram class="w-7 h-7 md:w-10 md:h-10" />
         </a>
+      </div>
+
+      <!-- Code Editor Mock - Mobile (below social icons) -->
+      <div
+        class="hero-item md:hidden mt-8 flex-shrink-0 opacity-0 w-full flex justify-center"
+      >
+        <CodeEditorMock />
       </div>
     </div>
 
-    <div class="hero-item flex-shrink-0 opacity-0">
+    <!-- Code Editor Mock - Desktop (right side) -->
+    <div class="hero-item hidden md:block flex-shrink-0 opacity-0">
       <CodeEditorMock />
     </div>
-
   </div>
 
   <ScrollHintIsland />
@@ -77,10 +113,10 @@ import AuroraBackground from './AuroraBackground.astro';
 </style>
 
 <script>
-  const items = document.querySelectorAll('.hero-item');
+  const items = document.querySelectorAll(".hero-item");
   items.forEach((el, i) => {
     setTimeout(() => {
-      el.classList.add('visible');
+      el.classList.add("visible");
     }, i * 200);
   });
 </script>

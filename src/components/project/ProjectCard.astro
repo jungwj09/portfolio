@@ -14,7 +14,7 @@ const { slug, title, description, thumbnail, techStack } = Astro.props;
 
 <a
   href={`/projects/${slug}`}
-  class="project-card group flex flex-col rounded-[15px] overflow-hidden border border-white/10 bg-[#111111] hover:border-white/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40"
+  class="project-card group flex flex-col rounded-[12px] md:rounded-[15px] overflow-hidden border border-white/10 bg-[#111111] hover:border-white/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40"
 >
   <div class="relative w-full aspect-[16/9] overflow-hidden bg-[#1A1A1A]">
     <img
@@ -30,16 +30,18 @@ const { slug, title, description, thumbnail, techStack } = Astro.props;
     </div>
   </div>
 
-  <div class="flex flex-col flex-1 p-5 gap-3">
-    <div class="flex flex-wrap gap-1.5">
+  <div class="flex flex-col flex-1 p-4 md:p-5 gap-2 md:gap-3">
+    <div class="flex flex-wrap gap-1 md:gap-1.5">
       {techStack.map((tech) => <TechBadge label={tech} />)}
     </div>
     <h3
-      class="text-white text-xl font-bold leading-snug transition-colors duration-200"
+      class="text-white text-base md:text-xl font-bold leading-snug transition-colors duration-200"
     >
       {title}
     </h3>
-    <p class="text-[#828282] text-sm leading-relaxed line-clamp-4">
+    <p
+      class="text-[#828282] text-xs md:text-sm leading-relaxed line-clamp-3 md:line-clamp-4"
+    >
       {description}
     </p>
   </div>
