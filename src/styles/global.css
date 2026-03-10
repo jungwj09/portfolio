@@ -17,6 +17,16 @@ body {
   font-family: "Wanted Sans", sans-serif;
 }
 
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 60px;
+  }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-10px); }
