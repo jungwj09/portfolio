@@ -1,15 +1,14 @@
 ---
 ---
 
-<div class="aurora-wrapper">
-  <div class="aurora aurora-1"></div>
-  <div class="aurora aurora-2"></div>
-  <div class="aurora aurora-3"></div>
-  <div class="aurora aurora-4"></div>
+<div class="star-wrapper">
+  <canvas id="star-canvas"></canvas>
+  <div class="glow-center"></div>
+  <div class="bottom-fade"></div>
 </div>
 
 <style>
-  .aurora-wrapper {
+  .star-wrapper {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -17,85 +16,145 @@
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
-    background: #0D0D0D;
+    background: #080808;
   }
 
-  .aurora {
+  #star-canvas {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.25;
-    animation: drift linear infinite;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .aurora-1 {
+  .glow-center {
+    position: absolute;
     width: 700px;
     height: 500px;
+    top: -100px;
+    left: -100px;
     background: radial-gradient(
       ellipse,
-      #1a4fa8 0%,
-      #0d2a6e 60%,
-      transparent 100%
+      rgba(64, 134, 230, 0.07) 0%,
+      transparent 70%
     );
-    top: -10%;
-    left: -5%;
-    animation-duration: 18s;
-    animation-delay: 0s;
+    filter: blur(60px);
+    pointer-events: none;
   }
 
-  .aurora-2 {
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(
-      ellipse,
-      #4086E6 0%,
-      #1a3fa0 50%,
-      transparent 100%
-    );
-    top: 20%;
-    right: -10%;
-    animation-duration: 22s;
-    animation-delay: -6s;
-    opacity: 0.18;
-  }
-
-  .aurora-3 {
-    width: 500px;
-    height: 600px;
-    background: radial-gradient(
-      ellipse,
-      #0e3d8f 0%,
-      #061d5c 55%,
-      transparent 100%
-    );
-    bottom: -15%;
-    left: 30%;
-    animation-duration: 26s;
-    animation-delay: -12s;
-    opacity: 0.2;
-  }
-
-  .aurora-4 {
-    width: 400px;
-    height: 350px;
-    background: radial-gradient(
-      ellipse,
-      #6aaaf5 0%,
-      #2a64c8 50%,
-      transparent 100%
-    );
-    top: 50%;
-    left: 15%;
-    animation-duration: 20s;
-    animation-delay: -4s;
-    opacity: 0.12;
-  }
-
-  @keyframes drift {
-    0%   { transform: translate(0px, 0px) scale(1); }
-    25%  { transform: translate(40px, -30px) scale(1.05); }
-    50%  { transform: translate(20px, 50px) scale(0.96); }
-    75%  { transform: translate(-30px, 20px) scale(1.03); }
-    100% { transform: translate(0px, 0px) scale(1); }
+  .bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: linear-gradient(to bottom, transparent, #080808);
+    pointer-events: none;
   }
 </style>
+
+<script>
+  const canvas = document.getElementById("star-canvas") as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d")!;
+
+  interface Star {
+    x: number;
+    y: number;
+    radius: number;
+    opacity: number;
+    speed: number;
+    angle: number;
+    twinkleSpeed: number;
+    twinklePhase: number;
+  }
+
+  let stars: Star[] = [];
+  let W = 0;
+  let H = 0;
+  let animId: number;
+
+  function resize() {
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    canvas.width = W;
+    canvas.height = H;
+    initStars();
+  }
+
+  function rand(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function initStars() {
+    const count = Math.floor((W * H) / 6000);
+    stars = Array.from({ length: count }, () => ({
+      x: rand(0, W),
+      y: rand(0, H),
+      radius: rand(0.3, 1.6),
+      opacity: rand(0.2, 0.9),
+      speed: rand(0.05, 0.25),
+      angle: rand(0, Math.PI * 2),
+      twinkleSpeed: rand(0.3, 1.0),
+      twinklePhase: rand(0, Math.PI * 2),
+    }));
+  }
+
+  let last = 0;
+
+  function draw(ts: number) {
+    const dt = Math.min((ts - last) / 1000, 0.05);
+    last = ts;
+
+    ctx.clearRect(0, 0, W, H);
+
+    const now = ts / 1000;
+
+    for (const s of stars) {
+      // drift
+      s.x += Math.cos(s.angle) * s.speed * dt * 60;
+      s.y += Math.sin(s.angle) * s.speed * dt * 60;
+
+      // wrap around edges
+      if (s.x < -2) s.x = W + 2;
+      if (s.x > W + 2) s.x = -2;
+      if (s.y < -2) s.y = H + 2;
+      if (s.y > H + 2) s.y = -2;
+
+      // twinkle
+      const alpha =
+        s.opacity *
+        (0.5 + 0.5 * Math.sin(now * s.twinkleSpeed + s.twinklePhase));
+
+      // 큰 별은 살짝 halo glow
+      if (s.radius > 1.1) {
+        const grd = ctx.createRadialGradient(
+          s.x,
+          s.y,
+          0,
+          s.x,
+          s.y,
+          s.radius * 5,
+        );
+        grd.addColorStop(0, `rgba(180, 210, 255, ${alpha * 0.35})`);
+        grd.addColorStop(1, "rgba(180,210,255,0)");
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.radius * 5, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+      }
+
+      // star core
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(210, 225, 255, ${alpha})`;
+      ctx.fill();
+    }
+
+    animId = requestAnimationFrame(draw);
+  }
+
+  resize();
+  animId = requestAnimationFrame(draw);
+
+  const ro = new ResizeObserver(resize);
+  ro.observe(canvas);
+</script>
