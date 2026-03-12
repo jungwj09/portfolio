@@ -3,7 +3,12 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
 ---
 
 <section id="about" class="relative w-full py-12 px-5 md:px-32 overflow-hidden">
-  <SectionTitle title="자기소개" subtitle="저를 소개합니다" />
+  <SectionTitle
+    title="자기소개"
+    subtitle="저를 소개합니다"
+    titleKey="about.title"
+    subtitleKey="about.subtitle"
+  />
 
   <div
     class="flex flex-col md:flex-row items-start md:items-start gap-8 md:gap-[114px]"
@@ -25,8 +30,11 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
         <p
           class="text-white text-base md:text-xl font-medium leading-relaxed text-left"
         >
-          안녕하세요👋<br />
-          저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는 개발자 정우진입니다.
+          <span data-i18n="about.greeting">안녕하세요👋</span><br />
+          <span data-i18n="about.intro">
+            저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는
+            개발자 정우진입니다.
+          </span>
         </p>
       </div>
 
@@ -34,11 +42,17 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
         <p
           class="text-white text-base md:text-xl font-medium leading-relaxed text-left"
         >
-          <span class="text-[#EAB736] font-semibold"
-            >기술의 온기로 더 나은 세상을 설계한다</span
-          >는 신념 아래,<br />
-          사람을 이해하는 기술, 그리고 사회에 긍정적인 임팩트를 남기는 서비스를 만드는
-          Startup Founder로 성장하고자 노력하고 있습니다.
+          <span
+            class="text-[#EAB736] font-semibold"
+            data-i18n="about.belief.highlight"
+          >
+            기술의 온기로 더 나은 세상을 설계한다
+          </span>
+          <span data-i18n-html="about.belief.rest">
+            는 신념 아래,<br />
+            사람을 이해하는 기술, 그리고 사회에 긍정적인 임팩트를 남기는 서비스를
+            만드는 Startup Founder로 성장하고자 노력하고 있습니다.
+          </span>
         </p>
       </div>
 
@@ -46,44 +60,37 @@ import SectionTitle from "@/components/common/SectionTitle.astro";
         <div
           class="grid grid-cols-2 gap-x-6 md:gap-x-[40px] gap-y-4 md:gap-y-[25px]"
         >
-          <div
-            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
-          >
+          <div class="flex flex-col gap-0.5 md:gap-1 items-start">
             <span class="text-white text-xl md:text-2xl font-semibold">17+</span
             >
-            <span class="text-[#575757] text-sm md:text-xl font-semibold">
-              완성된 프로젝트
-            </span>
+            <span
+              class="text-[#575757] text-sm md:text-xl font-semibold"
+              data-i18n="about.stat.projects">완성된 프로젝트</span
+            >
           </div>
-
-          <div
-            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
-          >
+          <div class="flex flex-col gap-0.5 md:gap-1 items-start">
             <span class="text-white text-xl md:text-2xl font-semibold">19+</span
             >
-            <span class="text-[#575757] text-sm md:text-xl font-semibold">
-              다루는 기술스택
-            </span>
+            <span
+              class="text-[#575757] text-sm md:text-xl font-semibold"
+              data-i18n="about.stat.tech">다루는 기술스택</span
+            >
           </div>
-
-          <div
-            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
-          >
+          <div class="flex flex-col gap-0.5 md:gap-1 items-start">
             <span class="text-white text-xl md:text-2xl font-semibold">1</span>
-            <span class="text-[#575757] text-sm md:text-xl font-semibold">
-              수상경력
-            </span>
+            <span
+              class="text-[#575757] text-sm md:text-xl font-semibold"
+              data-i18n="about.stat.awards">수상경력</span
+            >
           </div>
-
-          <div
-            class="flex flex-col gap-0.5 md:gap-1 items-start md:items-start"
-          >
+          <div class="flex flex-col gap-0.5 md:gap-1 items-start">
             <span class="text-white text-xl md:text-2xl font-semibold"
               >1720+</span
             >
-            <span class="text-[#575757] text-sm md:text-xl font-semibold">
-              GitHub 기여도
-            </span>
+            <span
+              class="text-[#575757] text-sm md:text-xl font-semibold"
+              data-i18n="about.stat.github">GitHub 기여도</span
+            >
           </div>
         </div>
       </div>

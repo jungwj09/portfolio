@@ -2,12 +2,21 @@
 interface Props {
   title: string;
   subtitle: string;
+  titleKey?: string;
+  subtitleKey?: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, titleKey, subtitleKey } = Astro.props;
 ---
 
 <div class="mb-6">
-  <h2 class="text-xl md:text-2xl font-bold text-white">{title}</h2>
-  <p class="mt-1.5 md:mt-2 text-[#828282] text-sm md:text-lg">{subtitle}</p>
+  <h2 class="text-xl md:text-2xl font-bold text-white" data-i18n={titleKey}>
+    {title}
+  </h2>
+  <p
+    class="mt-1.5 md:mt-2 text-[#828282] text-sm md:text-lg"
+    data-i18n={subtitleKey}
+  >
+    {subtitle}
+  </p>
 </div>

@@ -11,9 +11,14 @@ import projects from "@/data/projects.json";
   <SectionTitle
     title="프로젝트"
     subtitle="제가 지금까지 진행했던 프로젝트들이에요"
+    titleKey="projects.title"
+    subtitleKey="projects.subtitle"
   />
 
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
+  <div
+    id="project-grid"
+    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5"
+  >
     {
       (projects as any[]).map((project) => (
         <ProjectCard
@@ -27,3 +32,35 @@ import projects from "@/data/projects.json";
     }
   </div>
 </section>
+
+<script>
+  import projects from "@/data/projects.json";
+
+  function getLang() {
+    return localStorage.getItem("lang") ?? "ko";
+  }
+
+  function updateProjectCards() {
+    const lang = getLang();
+    document
+      .querySelectorAll<HTMLElement>("[data-project-slug]")
+      .forEach((card) => {
+        const slug = card.dataset.projectSlug;
+        const project = (projects as any[]).find((p) => p.slug === slug);
+        if (!project) return;
+
+        const titleEl = card.querySelector<HTMLElement>("[data-project-title]");
+        const descEl = card.querySelector<HTMLElement>("[data-project-desc]");
+
+        if (titleEl)
+          titleEl.textContent =
+            lang === "en" ? project.title_en : project.title;
+        if (descEl)
+          descEl.textContent =
+            lang === "en" ? project.description_en : project.description;
+      });
+  }
+
+  updateProjectCards();
+  window.addEventListener("langchange", updateProjectCards);
+</script>

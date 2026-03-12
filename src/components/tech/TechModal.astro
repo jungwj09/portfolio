@@ -35,6 +35,7 @@ import { X } from "lucide-astro";
     <div class="mb-6">
       <h4
         class="text-xs font-semibold text-[#575757] uppercase tracking-widest mb-2"
+        data-i18n="tech.modal.experience"
       >
         경험
       </h4>
@@ -48,6 +49,7 @@ import { X } from "lucide-astro";
     <div id="modal-projects-wrapper">
       <h4
         class="text-xs font-semibold text-[#575757] uppercase tracking-widest mb-3"
+        data-i18n="tech.modal.projects"
       >
         사용된 프로젝트
       </h4>
@@ -70,9 +72,29 @@ import { X } from "lucide-astro";
   const modal = document.getElementById("tech-modal")!;
   const closeBtn = document.getElementById("tech-modal-close")!;
 
+  function getLang() {
+    return localStorage.getItem("lang") ?? "ko";
+  }
+
+  let currentTechId: string | null = null;
+
   function openModal(id: string) {
-    const tech = (techStack as any[]).find((t) => t.id === id);
+    currentTechId = id;
+    renderModal();
+
+    overlay.classList.remove("opacity-0", "pointer-events-none");
+    overlay.classList.add("opacity-100");
+    modal.classList.remove("scale-95");
+    modal.classList.add("scale-100");
+    document.body.style.overflow = "hidden";
+  }
+
+  function renderModal() {
+    if (!currentTechId) return;
+    const tech = (techStack as any[]).find((t) => t.id === currentTechId);
     if (!tech) return;
+
+    const lang = getLang();
 
     (document.getElementById("modal-icon") as HTMLImageElement).src = tech.icon;
     (document.getElementById("modal-icon") as HTMLImageElement).alt = tech.name;
@@ -80,7 +102,9 @@ import { X } from "lucide-astro";
     document.getElementById("modal-category")!.textContent =
       categoryLabels[tech.category] ?? tech.category;
     document.getElementById("modal-description")!.textContent =
-      tech.description;
+      lang === "en" && tech.description_en
+        ? tech.description_en
+        : tech.description;
 
     const wrapper = document.getElementById("modal-projects-wrapper")!;
     const projectsEl = document.getElementById("modal-projects")!;
@@ -98,12 +122,6 @@ import { X } from "lucide-astro";
         projectsEl.appendChild(badge);
       });
     }
-
-    overlay.classList.remove("opacity-0", "pointer-events-none");
-    overlay.classList.add("opacity-100");
-    modal.classList.remove("scale-95");
-    modal.classList.add("scale-100");
-    document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
@@ -127,5 +145,10 @@ import { X } from "lucide-astro";
       const id = (btn as HTMLElement).dataset.techId;
       if (id) openModal(id);
     });
+  });
+
+  // 언어 변경 시 모달이 열려 있으면 내용 재렌더링
+  window.addEventListener("langchange", () => {
+    if (!overlay.classList.contains("opacity-0")) renderModal();
   });
 </script>

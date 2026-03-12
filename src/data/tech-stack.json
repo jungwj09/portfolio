@@ -5,6 +5,7 @@
         "icon": "/images/tech/HTML5.svg",
         "category": "frontend",
         "description": "시맨틱 마크업을 기반으로 문서 구조를 체계적으로 설계하며, 웹 접근성(ARIA)과 SEO를 고려한 구조를 구현해왔습니다. 메타 태그, Open Graph, 구조화 데이터 적용을 통해 검색 노출과 정보 전달력을 개선한 경험이 있습니다.",
+        "description_en": "I design document structures using semantic markup, implementing accessibility (ARIA) and SEO-conscious layouts. I have experience improving search visibility and information delivery through meta tags, Open Graph, and structured data.",
         "projects": []
     },
     {
@@ -13,6 +14,7 @@
         "icon": "/images/tech/CSS3.svg",
         "category": "frontend",
         "description": "Flexbox와 Grid를 활용한 레이아웃 설계와 반응형 UI 구현에 익숙합니다. 애니메이션과 트랜지션을 상황에 맞게 적용해 사용자 경험을 개선해왔습니다.",
+        "description_en": "Proficient in layout design using Flexbox and Grid, and comfortable building responsive UIs. I apply animations and transitions appropriately to enhance the user experience.",
         "projects": []
     },
     {
@@ -21,6 +23,7 @@
         "icon": "/images/tech/JavaScript.svg",
         "category": "frontend",
         "description": "ES6+ 문법을 기반으로 모듈화된 구조를 설계하고, async/await 및 Promise를 활용한 비동기 흐름 제어에 익숙합니다. 이벤트 흐름에 대한 이해를 바탕으로 안정적인 인터랙션을 구현합니다.",
+        "description_en": "I design modular structures using ES6+ syntax and am comfortable managing asynchronous flows with async/await and Promises. I build reliable interactions based on a solid understanding of the event model.",
         "projects": []
     },
     {
@@ -29,6 +32,7 @@
         "icon": "/images/tech/TypeScript.svg",
         "category": "frontend",
         "description": "인터페이스, 제네릭, 유틸리티 타입을 적극 활용해 타입 안정성을 확보합니다. 컴파일 단계에서 오류를 사전에 방지하는 구조로 프로젝트를 설계해 유지보수성을 높여왔습니다.",
+        "description_en": "I leverage interfaces, generics, and utility types to ensure type safety. I design projects to catch errors at compile time, improving long-term maintainability.",
         "projects": []
     },
     {
@@ -37,6 +41,7 @@
         "icon": "/images/tech/React.svg",
         "category": "frontend",
         "description": "컴포넌트 기반 아키텍처와 Hooks를 중심으로 SPA를 설계·구현합니다. 상태 분리와 메모이제이션을 통해 렌더링 최적화를 적용하며, 재사용 가능한 구조를 지향합니다.",
+        "description_en": "I design and build SPAs centered on component-based architecture and Hooks. I apply rendering optimizations through state separation and memoization, aiming for reusable structures.",
         "projects": ["Collaby", "선린샘터", "선린제 타자대결 웹 사이트", "수능 카운트다운"]
     },
     {
@@ -45,6 +50,7 @@
         "icon": "/images/tech/Next.js.svg",
         "category": "frontend",
         "description": "SSR, SSG, ISR을 프로젝트 특성에 맞게 적용해 성능과 SEO를 최적화합니다. App Router 기반 서버 컴포넌트와 API Route를 활용해 프론트 중심의 풀스택 구조를 구성해왔습니다.",
+        "description_en": "I apply SSR, SSG, and ISR based on project needs to optimize performance and SEO. I build frontend-driven full-stack architectures using App Router server components and API Routes.",
         "projects": ["SPARK! 웹 사이트/관리자 페이지", "GitByeo", "LINKA", "Teamello"]
     },
     {
@@ -53,6 +59,7 @@
         "icon": "/images/tech/Vue.js.svg",
         "category": "frontend",
         "description": "Composition API 기반으로 컴포넌트를 설계하며, Pinia를 활용한 전역 상태관리를 구현해본 경험이 있습니다. 반응성 시스템에 대한 이해를 바탕으로 직관적인 UI를 구성합니다.",
+        "description_en": "I design components using the Composition API and have experience implementing global state management with Pinia. I build intuitive UIs based on a solid understanding of Vue's reactivity system.",
         "projects": ["송이룸영문법 학생 시험 분석기 - 답안지 업로드 PWA앱"]
     },
     {
@@ -61,6 +68,7 @@
         "icon": "/images/tech/Astro.svg",
         "category": "frontend",
         "description": "Islands Architecture를 적용해 필요한 부분만 하이드레이션하는 방식으로 성능을 최적화했습니다. 콘텐츠 중심의 정적 사이트 구조 설계에 익숙합니다.",
+        "description_en": "I optimize performance using Islands Architecture, hydrating only the parts that need interactivity. Comfortable designing content-focused static site structures.",
         "projects": ["포트폴리오 웹사이트"]
     },
     {
@@ -69,6 +77,7 @@
         "icon": "/images/tech/Tailwind CSS.svg",
         "category": "frontend",
         "description": "유틸리티 클래스 기반으로 빠르게 UI를 구현하며, 일관된 디자인 시스템을 구성합니다. 커스텀 테마 설정과 컴포넌트 패턴화를 통해 생산성을 높여왔습니다.",
+        "description_en": "I rapidly build UIs using utility classes and maintain consistent design systems. I improve productivity through custom theme configuration and component patterns.",
         "projects": ["GitByeo", "Teamello", "LINKA", "SPARK! 웹 사이트/관리자 페이지", "포트폴리오 웹사이트"]
     },
     {
@@ -77,6 +86,7 @@
         "icon": "/images/tech/Styled-components.svg",
         "category": "frontend",
         "description": "CSS-in-JS 방식으로 컴포넌트 단위 스타일을 캡슐화하고, props 기반 동적 스타일링과 테마 구성을 적용해 일관된 UI를 구현해왔습니다.",
+        "description_en": "I encapsulate component-level styles using CSS-in-JS, applying props-based dynamic styling and theming to build consistent UIs.",
         "projects": ["학생회 이벤트 관리 대시보드"]
     },
     {
@@ -85,6 +95,7 @@
         "icon": "/images/tech/Node.js.svg",
         "category": "backend",
         "description": "기본적인 서버 환경을 구성하고 비동기 I/O 기반 구조를 이해하고 있습니다. 필요한 기능 중심으로 백엔드를 구현하며, 프론트엔드와의 연동을 고려한 구조 설계를 지향합니다.",
+        "description_en": "I set up basic server environments and understand async I/O-based architecture. I implement feature-focused backends with frontend integration in mind.",
         "projects": ["송이룸영문법 학생 시험 분석기", "틴스팟"]
     },
     {
@@ -93,6 +104,7 @@
         "icon": "/images/tech/Express.svg",
         "category": "backend",
         "description": "RESTful API를 설계하고 미들웨어 기반 구조를 활용해 인증 및 에러 처리를 구현해본 경험이 있습니다. 복잡한 서버 아키텍처보다는 서비스 구현에 필요한 범위 내에서 활용하고 있습니다.",
+        "description_en": "I have experience designing RESTful APIs and implementing auth and error handling using middleware-based structures. I use Express within the scope needed for each service rather than complex architectures.",
         "projects": ["송이룸영문법 학생 시험 분석기"]
     },
     {
@@ -101,6 +113,7 @@
         "icon": "/images/tech/Firebase.svg",
         "category": "backend",
         "description": "Firestore, Authentication, Cloud Functions, Storage를 활용해 서버리스 기반 서비스를 여러 차례 구축했습니다. 빠른 프로토타이핑과 실서비스 운영 경험이 있습니다.",
+        "description_en": "I have built serverless services multiple times using Firestore, Authentication, Cloud Functions, and Storage. I have experience with rapid prototyping and running production services.",
         "projects": []
     },
     {
@@ -109,6 +122,7 @@
         "icon": "/images/tech/Supabase.svg",
         "category": "backend",
         "description": "PostgreSQL 기반 데이터 모델링과 Row Level Security 설정 경험이 있으며, 실시간 구독과 Edge Functions를 활용해 비교적 복잡한 서비스 구조도 구현해왔습니다.",
+        "description_en": "I have experience with PostgreSQL-based data modeling and Row Level Security configuration, and have implemented relatively complex service structures using real-time subscriptions and Edge Functions.",
         "projects": ["선린제 타자대결 웹 사이트", "Teamello"]
     },
     {
@@ -117,6 +131,7 @@
         "icon": "/images/tech/Flutter.svg",
         "category": "app",
         "description": "Dart 기반으로 iOS/Android 크로스플랫폼 앱을 개발해왔습니다. 상태관리와 비동기 처리에 익숙하며, 플랫폼 채널을 통한 네이티브 기능 연동 경험이 있습니다.",
+        "description_en": "I have developed cross-platform iOS/Android apps using Dart. Comfortable with state management and async handling, and have experience integrating native features via platform channels.",
         "projects": ["보카토리"]
     },
     {
@@ -125,6 +140,7 @@
         "icon": "/images/tech/Kotlin.svg",
         "category": "app",
         "description": "Android 네이티브 환경에서 Kotlin을 활용해 앱을 개발했습니다. Coroutine 기반 비동기 처리와 Jetpack Compose를 활용한 UI 구현 경험이 있습니다.",
+        "description_en": "I have developed Android native apps using Kotlin. I have experience with coroutine-based async handling and building UIs with Jetpack Compose.",
         "projects": ["BackToDaily"]
     },
     {
@@ -133,6 +149,7 @@
         "icon": "/images/tech/React-native.svg",
         "category": "app",
         "description": "React 기반 구조를 활용해 크로스플랫폼 모바일 앱을 개발했습니다. Expo 환경에서 빌드 및 배포를 진행하며 실서비스 운영 경험을 쌓았습니다.",
+        "description_en": "I have built cross-platform mobile apps leveraging React-based architecture. I gained production experience by building and deploying with Expo.",
         "projects": ["틴스팟", "Eternal"]
     },
     {
@@ -141,6 +158,7 @@
         "icon": "/images/tech/Electron.svg",
         "category": "app",
         "description": "웹 기술을 기반으로 데스크탑 애플리케이션을 개발했습니다. IPC 통신을 통해 메인/렌더러 프로세스를 분리하고, OS 기능과의 연동을 구현한 경험이 있습니다.",
+        "description_en": "I have developed desktop applications using web technologies. I have experience separating main/renderer processes via IPC communication and integrating OS-level features.",
         "projects": ["선린샘터 데스크탑 앱"]
     },
     {
@@ -148,6 +166,8 @@
         "name": "Figma",
         "icon": "/images/tech/Figma.svg",
         "category": "design",
-        "description": "와이어프레임과 프로토타입을 제작하고, 기본적인 디자인 시스템을 구성해 개발 과정과의 간극을 줄여왔습니다. 구현을 고려한 현실적인 UI 설계를 지향합니다."
+        "description": "와이어프레임과 프로토타입을 제작하고, 기본적인 디자인 시스템을 구성해 개발 과정과의 간극을 줄여왔습니다. 구현을 고려한 현실적인 UI 설계를 지향합니다.",
+        "description_en": "I create wireframes and prototypes and build basic design systems to bridge the gap between design and development. I aim for realistic UI designs that are implementation-aware.",
+        "projects": []
     }
 ]

@@ -3,11 +3,11 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { Menu, X } from "lucide-astro";
 
 const navItems = [
-  { label: "자기소개", href: "#about" },
-  { label: "기술 스택", href: "#tech" },
-  { label: "프로젝트", href: "#projects" },
-  { label: "활동", href: "#journey" },
-  { label: "연락처", href: "#contact" },
+  { label: "자기소개", href: "#about", i18n: "nav.about" },
+  { label: "기술 스택", href: "#tech", i18n: "nav.tech" },
+  { label: "프로젝트", href: "#projects", i18n: "nav.projects" },
+  { label: "활동", href: "#journey", i18n: "nav.activity" },
+  { label: "연락처", href: "#contact", i18n: "nav.contact" },
 ];
 ---
 
@@ -26,6 +26,7 @@ const navItems = [
       navItems.map((item) => (
         <a
           href={item.href}
+          data-i18n={item.i18n}
           class="w-full max-w-[120px] text-center py-1.5 px-2 font-medium hover:border-b-2 hover:border-white transition-all"
         >
           {item.label}
@@ -63,6 +64,7 @@ const navItems = [
       navItems.map((item) => (
         <a
           href={item.href}
+          data-i18n={item.i18n}
           class="mobile-nav-link py-3 text-base text-white/70 font-medium border-b border-white/5 hover:text-white transition-colors"
         >
           {item.label}
@@ -88,29 +90,13 @@ const navItems = [
     isMenuOpen = !isMenuOpen;
 
     if (isMenuOpen) {
-      mobileMenu?.classList.remove(
-        "-translate-y-full",
-        "opacity-0",
-        "pointer-events-none",
-      );
-      mobileMenu?.classList.add(
-        "translate-y-0",
-        "opacity-100",
-        "pointer-events-auto",
-      );
+      mobileMenu?.classList.remove("-translate-y-full", "opacity-0", "pointer-events-none");
+      mobileMenu?.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
       iconOpen?.classList.add("hidden");
       iconClose?.classList.remove("hidden");
     } else {
-      mobileMenu?.classList.add(
-        "-translate-y-full",
-        "opacity-0",
-        "pointer-events-none",
-      );
-      mobileMenu?.classList.remove(
-        "translate-y-0",
-        "opacity-100",
-        "pointer-events-auto",
-      );
+      mobileMenu?.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
+      mobileMenu?.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
       iconOpen?.classList.remove("hidden");
       iconClose?.classList.add("hidden");
     }
@@ -118,7 +104,6 @@ const navItems = [
 
   menuToggle?.addEventListener("click", toggleMenu);
 
-  // Close menu when clicking a nav link
   mobileNavLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (isMenuOpen) toggleMenu();
