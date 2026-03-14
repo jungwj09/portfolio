@@ -38,6 +38,7 @@ export const translations = {
     // Projects
     "projects.title": "프로젝트",
     "projects.subtitle": "제가 지금까지 진행했던 프로젝트들이에요",
+    "projects.wip": "현재 작업중인 부분입니다",
 
     // Activity
     "activity.title": "활동",
@@ -106,6 +107,7 @@ export const translations = {
     // Projects
     "projects.title": "Projects",
     "projects.subtitle": "Projects I've worked on so far",
+    "projects.wip": "This page is currently under construction.",
 
     // Activity
     "activity.title": "Activities",

@@ -1,5 +1,8 @@
 ---
+import MainLayout from "@/layouts/MainLayout.astro";
+import Header from "@/components/layout/Header.astro";
 import projects from "@/data/projects.json";
+import { ChevronLeft } from "lucide-astro";
 
 export function getStaticPaths() {
   return (projects as any[]).map((p) => ({
@@ -8,4 +11,18 @@ export function getStaticPaths() {
 }
 ---
 
-<!-- TODO: 프로젝트 상세 페이지 만들기 -->
+<MainLayout>
+  <Header />
+
+  <div class="relative h-screen">
+    <a href="/#projects" class="absolute top-6 left-6 text-[#979797] z-50">
+      <ChevronLeft size={24} />
+    </a>
+
+    <div class="flex items-center justify-center h-full">
+      <p class="text-[#979797] text-xl font-medium">
+        <span data-i18n="projects.wip">현재 작업중인 부분입니다</span>
+      </p>
+    </div>
+  </div>
+</MainLayout>
