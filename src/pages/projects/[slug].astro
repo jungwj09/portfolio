@@ -1,0 +1,11 @@
+---
+import projects from "@/data/projects.json";
+
+export function getStaticPaths() {
+  return (projects as any[]).map((p) => ({
+    params: { slug: p.slug },
+  }));
+}
+---
+
+<!-- TODO: 프로젝트 상세 페이지 만들기 -->
