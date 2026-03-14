@@ -3,11 +3,11 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { Menu, X } from "lucide-astro";
 
 const navItems = [
-  { label: "자기소개", href: "#about", i18n: "nav.about" },
-  { label: "기술 스택", href: "#tech", i18n: "nav.tech" },
-  { label: "프로젝트", href: "#projects", i18n: "nav.projects" },
-  { label: "활동", href: "#journey", i18n: "nav.activity" },
-  { label: "연락처", href: "#contact", i18n: "nav.contact" },
+  { label: "자기소개", href: "/#about", i18n: "nav.about" },
+  { label: "기술 스택", href: "/#tech", i18n: "nav.tech" },
+  { label: "프로젝트", href: "/#projects", i18n: "nav.projects" },
+  { label: "활동", href: "/#journey", i18n: "nav.activity" },
+  { label: "연락처", href: "/#contact", i18n: "nav.contact" },
 ];
 ---
 
@@ -16,7 +16,7 @@ const navItems = [
   class="hidden md:flex w-full sticky top-0 left-0 right-0 h-[72px] items-center justify-between px-6 z-50 bg-[#000000] border-b border-[#1A1A1A]"
 >
   <a href="/" class="flex items-center">
-    <img src="logo/logo.svg" alt="JungWJ" class="h-[35px] w-auto" />
+    <img src="/logo/logo.svg" alt="JungWJ" class="h-[35px] w-auto" />
   </a>
 
   <nav
@@ -45,7 +45,7 @@ const navItems = [
   class="md:hidden w-full sticky top-0 left-0 right-0 h-[60px] flex items-center justify-between px-5 z-50 bg-[#000000] border-b border-[#1A1A1A]"
 >
   <a href="/" class="flex items-center">
-    <img src="logo/logo.svg" alt="JungWJ" class="h-[35px] w-auto" />
+    <img src="/logo/logo.svg" alt="JungWJ" class="h-[35px] w-auto" />
   </a>
 
   <button id="mobile-menu-toggle" class="text-white p-2" aria-label="메뉴 열기">
