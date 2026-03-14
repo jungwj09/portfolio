@@ -5,7 +5,7 @@
     "title_en": "Sunrin Saemter",
     "description": "선린샘터는 선린인터넷고 교내 선생님들의 교무실 자리 위치 및 부재 여부를 확인할 수 있는 서비스에요.",
     "description_en": "Sunrin Saemter is a service that lets students check teachers' desk locations in the faculty room and whether they are currently absent.",
-    "thumbnail": "/images/projects/example-image.png",
+    "thumbnail": "/images/projects/sunrin-saemter.svg",
     "techStack": ["React", "Electron"]
   },
   {
@@ -14,7 +14,7 @@
     "title_en": "GitByeo",
     "description": "깃벼는 AI 기반 커밋메시지 분석 및 피드백 제공 솔루션과 개발자 커뮤니티를 갖춘 개발자 역량 관리 및 성장 기록 플랫폼이에요.",
     "description_en": "GitByeo is a developer growth platform featuring AI-powered commit message analysis and feedback, paired with a developer community for tracking progress.",
-    "thumbnail": "/images/projects/example-image.png",
+    "thumbnail": "/images/projects/gitbyeo.svg",
     "techStack": ["Next.js", "Tailwind CSS"]
   },
   {
@@ -23,7 +23,7 @@
     "title_en": "LINKA",
     "description": "LINKA는 AI 기반 유사 사기 범죄 피해자 매칭 및 초기 법적 공동대응 지원 플랫폼으로, 동일 가해자나 유사 수법으로 사기를 당한 피해자들을 연결하여 공동 대응을 돕는 서비스에요.",
     "description_en": "LINKA is an AI-powered platform that matches fraud victims with similar cases and supports initial collective legal action, connecting victims of the same or similar scams.",
-    "thumbnail": "/images/projects/example-image.png",
+    "thumbnail": "/images/projects/linka.svg",
     "techStack": ["Next.js", "Tailwind CSS"]
   },
   {
@@ -32,7 +32,16 @@
     "title_en": "Teamello",
     "description": "Teamello는 부드러운 팀워크를 위한 AI 기반 갈등 사전 예방 및 협업 관리 플랫폼이에요",
     "description_en": "Teamello is an AI-powered conflict prevention and collaboration management platform for smoother teamwork.",
-    "thumbnail": "/images/projects/example-image.png",
+    "thumbnail": "/images/projects/teamello.svg",
     "techStack": ["Next.js", "Tailwind CSS", "Supabase"]
+  },
+  {
+    "slug": "portfolio",
+    "title": "포트폴리오 웹사이트",
+    "title_en": "Portfolio website",
+    "description": "여러분이 지금 보고 계신 이 페이지입니다.",
+    "description_en": "The page that you're looking at right now.",
+    "thumbnail": "/images/projects/portfolio.svg",
+    "techStack": ["Astro", "Tailwind CSS"]
   }
 ]
