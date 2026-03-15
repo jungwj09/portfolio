@@ -1,3 +1,14 @@
 # My Portfolio Website
 
-Built with Astro 5.17 and Tailwind CSS 4.2
+![cover](public/images/docs/cover.png)
+
+## Tech Stack
+
+### Framework
+- Astro 5.17
+
+### Styling
+- Tailwind CSS 4.2
+
+### Deployment
+- Cloudflare Pages
