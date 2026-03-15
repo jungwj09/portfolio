@@ -31,9 +31,8 @@ export const translations = {
     "tech.title": "기술 스택",
     "tech.subtitle": "제가 주로 다루는 기술들이에요",
     "tech.hint":
-      "아이콘을 클릭하면 해당 기술스택의 경험과 사용된 프로젝트를 확인할 수 있습니다.",
+      "아이콘을 클릭하면 해당 기술스택의 경험을 확인할 수 있습니다.",
     "tech.modal.experience": "경험",
-    "tech.modal.projects": "사용된 프로젝트",
 
     // Projects
     "projects.title": "프로젝트",
@@ -100,9 +99,8 @@ export const translations = {
     "tech.title": "Tech Stack",
     "tech.subtitle": "Technologies I mainly work with",
     "tech.hint":
-      "Click an icon to see my experience and projects using that technology.",
+      "Click an icon to see my experience with that technology.",
     "tech.modal.experience": "Experience",
-    "tech.modal.projects": "Used In",
 
     // Projects
     "projects.title": "Projects",

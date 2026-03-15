@@ -30,24 +30,18 @@ import { X } from "lucide-astro";
       </div>
     </div>
 
-    <div class="mb-6">
+    <div>
       <h4
         class="text-xs font-semibold text-[#575757] uppercase tracking-widest mb-2"
         data-i18n="tech.modal.experience"
       >
         경험
       </h4>
-      <p id="modal-description" class="text-[#C0C0C0] text-base leading-relaxed"></p>
-    </div>
-
-    <div id="modal-projects-wrapper">
-      <h4
-        class="text-xs font-semibold text-[#575757] uppercase tracking-widest mb-3"
-        data-i18n="tech.modal.projects"
+      <p
+        id="modal-description"
+        class="text-[#C0C0C0] text-base leading-relaxed"
       >
-        사용된 프로젝트
-      </h4>
-      <div id="modal-projects" class="flex flex-wrap gap-2"></div>
+      </p>
     </div>
   </div>
 </div>
@@ -99,23 +93,6 @@ import { X } from "lucide-astro";
       lang === "en" && tech.description_en
         ? tech.description_en
         : tech.description;
-
-    const wrapper = document.getElementById("modal-projects-wrapper")!;
-    const projectsEl = document.getElementById("modal-projects")!;
-    projectsEl.innerHTML = "";
-
-    if (!tech.projects || tech.projects.length === 0) {
-      wrapper.style.display = "none";
-    } else {
-      wrapper.style.display = "block";
-      (tech.projects as string[]).forEach((p) => {
-        const badge = document.createElement("span");
-        badge.className =
-          "px-3 py-1 rounded-[15px] text-sm font-medium text-white/80 border border-white/15 bg-white/8";
-        badge.textContent = p;
-        projectsEl.appendChild(badge);
-      });
-    }
   }
 
   function closeModal() {
@@ -141,7 +118,6 @@ import { X } from "lucide-astro";
     });
   });
 
-  // 언어 변경 시 모달이 열려 있으면 내용 재렌더링
   window.addEventListener("langchange", () => {
     if (!overlay.classList.contains("opacity-0")) renderModal();
   });
