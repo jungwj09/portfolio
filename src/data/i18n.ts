@@ -87,7 +87,7 @@ export const translations = {
     "about.intro":
       "I'm Woojin Jung (a.k.a Dev Jino), a developer who enjoys discovering problems and turning solutions into products.",
     "about.belief.highlight":
-      "Designing a better world with the warmth of technology",
+      "Engineering a better world with the warmth of technology",
     "about.belief.rest":
       " — grounded in this belief,\nI strive to grow as a Startup Founder who builds\ntechnology that understands people and creates positive impact.",
     "about.stat.projects": "Completed Projects",
