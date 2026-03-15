@@ -1,21 +1,34 @@
 ---
 import "../styles/global.css";
 
-const { title = "JungWJ | Portfolio", description = "정우진 포트폴리오" } = Astro.props;
+const {
+  title = "Woojin Jung | Dev Jino",
+  description = "정우진 포트폴리오 웹 사이트",
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32.png"
+    />
   </head>
 
   <body class="bg-black text-white antialiased">
-
     <slot />
-
   </body>
 </html>

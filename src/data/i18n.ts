@@ -18,7 +18,7 @@ export const translations = {
     "about.subtitle": "저를 소개합니다",
     "about.greeting": "안녕하세요👋",
     "about.intro":
-      "저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는 개발자 정우진입니다.",
+      "저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는 개발자 정우진 (a.k.a Dev Jino)입니다.",
     "about.belief.highlight": "기술의 온기로 더 나은 세상을 설계한다",
     "about.belief.rest":
       "는 신념을 지니고,\n사람을 이해하는 기술, 그리고 사회에 긍정적인 임팩트를 남기는 서비스를 만드는\nStartup Founder로 성장하고자 노력하고 있습니다.",
@@ -86,7 +86,7 @@ export const translations = {
     "about.subtitle": "Let me introduce myself",
     "about.greeting": "Hello there 👋",
     "about.intro":
-      "I'm Woojin Jung, a developer who enjoys discovering problems and turning solutions into products.",
+      "I'm Woojin Jung (a.k.a Dev Jino), a developer who enjoys discovering problems and turning solutions into products.",
     "about.belief.highlight":
       "Designing a better world with the warmth of technology",
     "about.belief.rest":
