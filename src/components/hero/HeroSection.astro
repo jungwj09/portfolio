@@ -6,28 +6,20 @@ import Tag from "./Tag.astro";
 import AuroraBackground from "./AuroraBackground.astro";
 ---
 
-<section
-  class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-32 overflow-hidden bg-black"
->
+<section class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-32 overflow-hidden bg-black">
   <AuroraBackground />
 
-  <div
-    class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-16 -translate-y-8 md:-translate-y-16"
-  >
-    <div
-      class="flex flex-col items-start md:items-start text-left md:text-left w-full"
-    >
-      <p
-        class="hero-item text-white text-2xl md:text-4xl font-semibold opacity-0 text-balance leading-tight"
+  <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-16 -translate-y-8 md:-translate-y-16">
+    <div class="flex flex-col items-start md:items-start text-left md:text-left w-full">
+      <p 
+        class="hero-item text-white text-2xl md:text-4xl font-semibold opacity-0 text-balance leading-tight" 
         data-i18n="hero.tagline"
       >
         사람과 사회에 <span class="text-[#EAB736]">긍정적인 임팩트</span>를
         만드는 개발자
       </p>
 
-      <h1
-        class="hero-item mt-4 md:mt-[20px] text-[36px] md:text-[52px] font-bold text-white leading-tight opacity-0"
-      >
+      <h1 class="hero-item mt-4 md:mt-[20px] text-[36px] md:text-[52px] font-bold text-white leading-tight opacity-0">
         <span
           class="text-[#4086E6] border-b-2 border-[#3b82f6] pb-0.5"
           data-i18n="hero.name">정우진</span
@@ -38,16 +30,12 @@ import AuroraBackground from "./AuroraBackground.astro";
         >
       </h1>
 
-      <div
-        class="hero-item mt-6 md:mt-[50px] flex gap-2 md:gap-3 flex-wrap justify-start md:justify-start opacity-0"
-      >
+      <div class="hero-item mt-6 md:mt-[50px] flex gap-2 md:gap-3 flex-wrap justify-start md:justify-start opacity-0">
         <Tag label="Developer" />
         <Tag label="Startup Founder" />
       </div>
 
-      <div
-        class="hero-item mt-6 md:mt-[50px] flex gap-5 md:gap-8 items-center opacity-0"
-      >
+      <div class="hero-item mt-6 md:mt-[50px] flex gap-5 md:gap-8 items-center opacity-0">
         <a
           href="https://github.com/jungwj09"
           target="_blank"
@@ -81,9 +69,7 @@ import AuroraBackground from "./AuroraBackground.astro";
         </a>
       </div>
 
-      <div
-        class="hero-item md:hidden mt-10 flex-shrink-0 opacity-0 w-full flex justify-start"
-      >
+      <div class="hero-item md:hidden mt-10 flex-shrink-0 opacity-0 w-full flex justify-start">
         <CodeEditorMock />
       </div>
     </div>

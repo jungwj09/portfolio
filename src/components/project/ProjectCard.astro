@@ -12,11 +12,10 @@ interface Props {
 const { slug, title, description, thumbnail, techStack } = Astro.props;
 ---
 
-<a href={`/projects/${slug}`}
-data-project-slug={slug}
-class="project-card group flex flex-col rounded-[12px] md:rounded-[15px] overflow-hidden
-border border-white/10 bg-[#111111] hover:border-white/25 transition-all duration-300
-hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40" >
+<a 
+  href={`/projects/${slug}`}
+  data-project-slug={slug}
+  class="project-card group flex flex-col rounded-[12px] md:rounded-[15px] overflow-hidden border border-white/10 bg-[#111111] hover:border-white/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40" >
 <div class="relative w-full aspect-[16/9] overflow-hidden bg-[#1A1A1A]">
   <img
     src={thumbnail}
