@@ -58,7 +58,7 @@ export const translations = {
     "contact.email.desc": "가장 빠르게 답장을 받으실 수 있어요",
     "contact.github.desc": "제 코드를 구경해보세요",
     "contact.linkedin.desc": "커리어 관련 연락은 여기서",
-    "contact.instagram.desc": "일상도 가끔 올려요",
+    "contact.instagram.desc": "소소한 개발 일지를 기록하고 있어요",
 
     // Footer
     "footer.rights": "© 2026 Woojin Jung. All rights reserved.",
@@ -127,7 +127,7 @@ export const translations = {
     "contact.email.desc": "Fastest way to get a reply",
     "contact.github.desc": "Check out my code",
     "contact.linkedin.desc": "For career-related inquiries",
-    "contact.instagram.desc": "I post daily life sometimes",
+    "contact.instagram.desc": "I am keeping a small development log.",
 
     // Footer
     "footer.rights": "© 2026 Woojin Jung. All rights reserved.",
