@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-![cover](public/images/docs/cover.png)
+<img src="public/images/docs/cover.png" alt="cover" width="700">
 
 ## Tech Stack
 
