@@ -1,7 +1,6 @@
 ---
 import { Github, Linkedin, Mail, Instagram } from "lucide-astro";
 import CodeEditorMock from "./CodeEditorMock.astro";
-import ScrollHintIsland from "./ScrollHintIsland.astro";
 import Tag from "./Tag.astro";
 import AuroraBackground from "./AuroraBackground.astro";
 ---
@@ -80,8 +79,6 @@ import AuroraBackground from "./AuroraBackground.astro";
       <CodeEditorMock />
     </div>
   </div>
-
-  <ScrollHintIsland />
 </section>
 
 <style>
@@ -103,6 +100,6 @@ import AuroraBackground from "./AuroraBackground.astro";
 <script>
   const items = document.querySelectorAll(".hero-item");
   items.forEach((el, i) => {
-    setTimeout(() => el.classList.add("visible"), i * 200);
+    setTimeout(() => el.classList.add("visible"), i * 150);
   });
 </script>
