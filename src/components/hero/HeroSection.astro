@@ -6,13 +6,15 @@ import Tag from "./Tag.astro";
 import AuroraBackground from "./AuroraBackground.astro";
 ---
 
-<section class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-32 overflow-hidden bg-black">
+<section
+  class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-32 overflow-hidden bg-black"
+>
   <AuroraBackground />
 
   <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-16 -translate-y-8 md:-translate-y-16">
     <div class="flex flex-col items-start md:items-start text-left md:text-left w-full">
-      <p 
-        class="hero-item text-white text-2xl md:text-4xl font-semibold opacity-0 text-balance leading-tight" 
+      <p
+        class="hero-item text-white text-2xl md:text-4xl font-semibold opacity-0 text-balance leading-tight"
         data-i18n="hero.tagline"
       >
         사람과 사회에 <span class="text-[#EAB736]">긍정적인 임팩트</span>를
@@ -69,7 +71,7 @@ import AuroraBackground from "./AuroraBackground.astro";
         </a>
       </div>
 
-      <div class="hero-item md:hidden mt-10 flex-shrink-0 opacity-0 w-full flex justify-start">
+      <div class="hero-item md:hidden mt-10 flex-shrink-0 opacity-0 w-full flex justify-center">
         <CodeEditorMock />
       </div>
     </div>
