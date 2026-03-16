@@ -3,19 +3,15 @@ import { Globe } from "lucide-astro";
 ---
 
 <button
-  id="lang-switcher"
-  class="flex items-center gap-[5px] text-base text-white border border-white px-[10px] py-[5px] rounded-[15px] transition-opacity hover:opacity-70"
+  class="lang-switcher flex items-center gap-[5px] text-base text-white border border-white px-[10px] py-[5px] rounded-[15px] transition-opacity hover:opacity-70"
   aria-label="Switch language"
 >
   <Globe size={19} />
-  <span id="lang-label">EN</span>
+  <span class="lang-label">EN</span>
 </button>
 
 <script>
   import { translations, type Lang } from "@/data/i18n";
-
-  const btn = document.getElementById("lang-switcher")!;
-  const label = document.getElementById("lang-label")!;
 
   function getLang(): Lang {
     return (localStorage.getItem("lang") as Lang) ?? "ko";
@@ -24,13 +20,16 @@ import { Globe } from "lucide-astro";
   function setLang(lang: Lang) {
     localStorage.setItem("lang", lang);
     applyLang(lang);
-    // 모든 컴포넌트에 언어 변경 알림
     window.dispatchEvent(new CustomEvent("langchange", { detail: { lang } }));
   }
 
   function applyLang(lang: Lang) {
     const t = translations[lang];
-    label.textContent = lang === "ko" ? "EN" : "KO";
+
+    // 모든 lang-label 업데이트
+    document.querySelectorAll<HTMLElement>(".lang-label").forEach((label) => {
+      label.textContent = lang === "ko" ? "EN" : "KO";
+    });
 
     document.querySelectorAll<HTMLElement>("[data-i18n]").forEach((el) => {
       const key = el.dataset.i18n as keyof typeof t;
@@ -46,8 +45,11 @@ import { Globe } from "lucide-astro";
 
   applyLang(getLang());
 
-  btn.addEventListener("click", () => {
-    const next: Lang = getLang() === "ko" ? "en" : "ko";
-    setLang(next);
+  // 모든 switcher 버튼에 이벤트 등록
+  document.querySelectorAll<HTMLElement>(".lang-switcher").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next: Lang = getLang() === "ko" ? "en" : "ko";
+      setLang(next);
+    });
   });
 </script>
