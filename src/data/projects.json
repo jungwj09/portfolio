@@ -85,7 +85,7 @@
     "description_en": "LINKA is an AI-powered platform that matches fraud victims with similar cases and supports initial collective legal action, connecting victims of the same or similar scams.",
     "thumbnail": "/images/projects/linka.svg",
     "techStack": ["Next.js", "Tailwind CSS"],
-    "team": ["정우진", "홍길동", "김철수"],
+    "team": ["정우진", "강상우", "마영민", "박해영"],
     "period": "2025년 12월 ~ 2025년 12월",
     "period_en": "Dec 2025 ~ Dec 2025",
     "github": "https://github.com/LINKA-Service",
