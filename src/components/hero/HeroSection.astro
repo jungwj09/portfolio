@@ -6,44 +6,52 @@ import AuroraBackground from "./AuroraBackground.astro";
 ---
 
 <section
-  class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-32 overflow-hidden bg-black"
+  class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-16 lg:px-32 overflow-hidden bg-black"
 >
   <AuroraBackground />
 
-  <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-16 -translate-y-8 md:-translate-y-16">
-    <div class="flex flex-col items-start md:items-start text-left md:text-left w-full">
+  <div
+    class="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full gap-8 lg:gap-16 -translate-y-8 md:-translate-y-16"
+  >
+    <div class="flex flex-col items-start text-left w-full">
       <p
-        class="hero-item text-white text-2xl md:text-4xl font-semibold opacity-0 text-balance leading-tight"
+        class="hero-item text-white text-2xl md:text-3xl lg:text-4xl font-semibold opacity-0 text-balance leading-tight"
         data-i18n="hero.tagline"
       >
         사람과 사회에 <span class="text-[#EAB736]">긍정적인 임팩트</span>를
         만드는 개발자
       </p>
 
-      <h1 class="hero-item mt-4 md:mt-[20px] text-[36px] md:text-[52px] font-bold text-white leading-tight opacity-0">
+      <h1
+        class="hero-item mt-4 lg:mt-5 text-[36px] md:text-[44px] lg:text-[52px] font-bold text-white leading-tight opacity-0"
+      >
         <span
           class="text-[#4086E6] border-b-2 border-[#3b82f6] pb-0.5"
           data-i18n="hero.name">정우진</span
         >
         <span
-          class="text-2xl md:text-4xl font-semibold text-white"
+          class="text-2xl md:text-3xl lg:text-4xl font-semibold text-white"
           data-i18n="hero.name.suffix">입니다</span
         >
       </h1>
 
-      <div class="hero-item mt-6 md:mt-[50px] flex gap-2 md:gap-3 flex-wrap justify-start md:justify-start opacity-0">
+      <div
+        class="hero-item mt-6 lg:mt-12.5 flex gap-2 md:gap-3 flex-wrap justify-start opacity-0"
+      >
         <Tag label="Developer" />
         <Tag label="Startup Founder" />
       </div>
 
-      <div class="hero-item mt-6 md:mt-[50px] flex gap-5 md:gap-8 items-center opacity-0">
+      <div
+        class="hero-item mt-6 lg:mt-12.5 flex gap-5 md:gap-8 items-center opacity-0"
+      >
         <a
           href="https://github.com/jungwj09"
           target="_blank"
           aria-label="GitHub"
           class="text-[#8D8D8D] hover:text-white transition-colors"
         >
-          <Github class="w-7 h-7 md:w-10 md:h-10" />
+          <Github class="w-7 h-7 md:w-9 md:h-9 lg:w-10 lg:h-10" />
         </a>
         <a
           href="https://www.linkedin.com/in/jungwj09/"
@@ -51,14 +59,14 @@ import AuroraBackground from "./AuroraBackground.astro";
           aria-label="LinkedIn"
           class="text-[#8D8D8D] hover:text-white transition-colors"
         >
-          <Linkedin class="w-7 h-7 md:w-10 md:h-10" />
+          <Linkedin class="w-7 h-7 md:w-9 md:h-9 lg:w-10 lg:h-10" />
         </a>
         <a
           href="mailto:me@jungwj09.dev"
           aria-label="Email"
           class="text-[#8D8D8D] hover:text-white transition-colors"
         >
-          <Mail class="w-7 h-7 md:w-10 md:h-10" />
+          <Mail class="w-7 h-7 md:w-9 md:h-9 lg:w-10 lg:h-10" />
         </a>
         <a
           href="https://www.instagram.com/jungwj09.dev/"
@@ -66,16 +74,20 @@ import AuroraBackground from "./AuroraBackground.astro";
           aria-label="Instagram"
           class="text-[#8D8D8D] hover:text-white transition-colors"
         >
-          <Instagram class="w-7 h-7 md:w-10 md:h-10" />
+          <Instagram class="w-7 h-7 md:w-9 md:h-9 lg:w-10 lg:h-10" />
         </a>
       </div>
 
-      <div class="hero-item md:hidden mt-10 flex-shrink-0 opacity-0 w-full flex justify-center">
+      <!-- 모바일: 항상 아래에 표시 -->
+      <div
+        class="hero-item lg:hidden mt-10 shrink-0 opacity-0 w-full flex justify-center"
+      >
         <CodeEditorMock />
       </div>
     </div>
 
-    <div class="hero-item hidden md:block flex-shrink-0 opacity-0">
+    <!-- 데스크탑(lg+): 오른쪽에 표시 -->
+    <div class="hero-item hidden lg:block shrink-0 opacity-0">
       <CodeEditorMock />
     </div>
   </div>

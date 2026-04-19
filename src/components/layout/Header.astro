@@ -13,21 +13,21 @@ const navItems = [
 
 <!-- Desktop Header -->
 <header
-  class="hidden md:flex w-full sticky top-0 left-0 right-0 h-18 items-center justify-between px-6 z-50 bg-[#000000] border-b border-[#1A1A1A]"
+  class="hidden md:flex w-full sticky top-0 left-0 right-0 h-18 items-center justify-between px-6 md:px-10 lg:px-16 xl:px-24 z-50 bg-[#000000] border-b border-[#1A1A1A]"
 >
-  <a href="/" class="flex items-center">
+  <a href="/" class="flex items-center shrink-0">
     <img src="/logo/logo.svg" alt="JungWJ" class="h-8.75 w-auto" />
   </a>
 
   <nav
-    class="w-full max-w-150 flex items-center justify-between text-base text-white/70"
+    class="flex items-center justify-center gap-1 md:gap-2 lg:gap-4 text-sm lg:text-base text-white/70 mx-4 lg:mx-8"
   >
     {
       navItems.map((item) => (
         <a
           href={item.href}
           data-i18n={item.i18n}
-          class="w-full max-w-30 text-center py-1.5 px-2 font-medium hover:border-b-2 hover:border-white transition-all"
+          class="text-center py-1.5 px-2 lg:px-3 font-medium whitespace-nowrap hover:border-b-2 hover:border-white transition-all"
         >
           {item.label}
         </a>
@@ -35,7 +35,7 @@ const navItems = [
     }
   </nav>
 
-  <div class="flex items-center">
+  <div class="flex items-center shrink-0">
     <LanguageSwitcher />
   </div>
 </header>
