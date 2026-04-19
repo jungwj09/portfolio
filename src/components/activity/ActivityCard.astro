@@ -10,14 +10,36 @@ interface Props {
 const { period, title, description, side, slug } = Astro.props;
 ---
 
-<div data-activity-slug={slug} class={`journey-card w-full max-w-[592px] rounded-[12px] md:rounded-[15px] border border-[#8E8E8E] bg-[#DADADA] p-4 md:p-6 flex flex-col gap-2 md:gap-3 ${side === "left" ? "mr-auto" : "ml-auto"}`}>
-  <span data-activity-period class="text-[#595959] text-xs md:text-sm">
+<div
+  data-activity-slug={slug}
+  class={`journey-card group relative w-full max-w-[592px] rounded-[12px] md:rounded-[15px] border border-white/10 bg-[#111111] p-4 md:p-6 flex flex-col gap-2 md:gap-3 overflow-hidden transition-all duration-300 hover:border-[#4086E6]/50 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/40 ${side === "left" ? "mr-auto" : "ml-auto"}`}
+>
+  <!-- Hover gradient glow -->
+  <div
+    class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+    style="background: radial-gradient(ellipse at 0% 0%, rgba(64,134,230,0.07) 0%, transparent 65%);"
+  >
+  </div>
+
+  <!-- Period badge -->
+  <span
+    data-activity-period
+    class="relative inline-flex self-start items-center px-2.5 py-1 rounded-full text-[11px] md:text-xs font-semibold tracking-wide bg-white/6 border border-white/12 text-[#828282]"
+  >
     {period}
   </span>
-  <h3 data-activity-title class="text-black-text text-base md:text-xl font-semibold">
+
+  <h3
+    data-activity-title
+    class="relative text-white text-base md:text-lg font-semibold leading-snug"
+  >
     {title}
   </h3>
-  <p data-activity-desc class="text-black-text text-sm md:text-base leading-relaxed">
+
+  <p
+    data-activity-desc
+    class="relative text-[#828282] text-sm md:text-[15px] leading-relaxed"
+  >
     {description}
   </p>
 </div>

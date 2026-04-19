@@ -34,12 +34,12 @@ import { Plus, Minus } from "lucide-astro";
   </div>
 
   <div class="relative" id="journey-timeline">
+    <!-- Desktop center line -->
     <div
-      class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/20 -translate-x-1/2 z-0"
-    >
-    </div>
-    <div class="md:hidden absolute left-3 top-0 bottom-0 w-px bg-white/20 z-0">
-    </div>
+      class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2 z-0"
+    />
+    <!-- Mobile left line -->
+    <div class="md:hidden absolute left-3 top-0 bottom-0 w-px bg-white/10 z-0" />
 
     <div id="journey-list" class="flex flex-col gap-4 md:gap-0">
       {
@@ -51,8 +51,21 @@ import { Plus, Minus } from "lucide-astro";
               class="journey-item relative flex items-center w-full md:min-h-40"
               data-index={i}
             >
-              <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#4086E6] border-2 border-[#4086E6] z-10 shrink-0" />
-              <div class="md:hidden absolute left-3 top-6 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#4086E6] border-2 border-[#4086E6] z-10 shrink-0" />
+              <!-- Desktop timeline dot with glow -->
+              <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 shrink-0">
+                <span class="timeline-dot relative w-3 h-3 flex items-center justify-center">
+                  <span class="absolute inset-0 rounded-full bg-[#4086E6] opacity-30 animate-ping" style="animation-duration:2.5s;" />
+                  <span class="relative w-2.5 h-2.5 rounded-full bg-[#4086E6] border-2 border-[#4086E6] shadow-[0_0_8px_rgba(64,134,230,0.7)]" />
+                </span>
+              </div>
+
+              <!-- Mobile dot -->
+              <div class="md:hidden absolute left-3 top-6 -translate-x-1/2 z-10 shrink-0">
+                <span class="relative w-2.5 h-2.5 flex items-center justify-center">
+                  <span class="absolute inset-0 rounded-full bg-[#4086E6] opacity-25 animate-ping" style="animation-duration:2.5s;" />
+                  <span class="relative w-2 h-2 rounded-full bg-[#4086E6] shadow-[0_0_6px_rgba(64,134,230,0.6)]" />
+                </span>
+              </div>
 
               <div class="card-slot-left hidden md:flex w-[calc(50%-32px)] pr-6 justify-end">
                 {side === "left" && (
@@ -163,12 +176,8 @@ import { Plus, Minus } from "lucide-astro";
         const item = (activities as any[])[idx];
         if (!item) return;
 
-        const periodEl = card.querySelector<HTMLElement>(
-          "[data-activity-period]",
-        );
-        const titleEl = card.querySelector<HTMLElement>(
-          "[data-activity-title]",
-        );
+        const periodEl = card.querySelector<HTMLElement>("[data-activity-period]");
+        const titleEl = card.querySelector<HTMLElement>("[data-activity-title]");
         const descEl = card.querySelector<HTMLElement>("[data-activity-desc]");
 
         if (periodEl)
@@ -176,8 +185,7 @@ import { Plus, Minus } from "lucide-astro";
         if (titleEl)
           titleEl.textContent = lang === "en" ? item.title_en : item.title;
         if (descEl)
-          descEl.textContent =
-            lang === "en" ? item.description_en : item.description;
+          descEl.textContent = lang === "en" ? item.description_en : item.description;
       });
   }
 
