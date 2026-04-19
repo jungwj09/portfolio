@@ -18,7 +18,7 @@ export const translations = {
     "about.subtitle": "저를 소개합니다",
     "about.greeting": "안녕하세요👋",
     "about.intro":
-      "저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는 개발자 정우진 (a.k.a Dev Jino)입니다.",
+      "저는 문제를 발견하고, 해결책을 제품으로 구현하는 과정을 즐기는 개발자 정우진 (a.k.a Dev Jino) 입니다.",
     "about.belief.highlight": "기술의 온기로 더 나은 세상을 설계한다",
     "about.belief.rest":
       "는 신념을 지니고,\n사람을 이해하는 기술, 그리고 사회에 긍정적인 임팩트를 남기는 서비스를 만드는\nStartup Founder로 성장하고자 노력하고 있습니다.",
@@ -38,6 +38,13 @@ export const translations = {
     "projects.title": "프로젝트",
     "projects.subtitle": "제가 지금까지 진행했던 프로젝트들이에요",
     "projects.wip": "현재 작업중인 부분입니다",
+    "project.detail.intro": "프로젝트 소개",
+    "project.detail.features": "주요 기능",
+
+    // Project detail
+    "project.section.intro": "프로젝트 소개",
+    "project.section.features": "주요 기능",
+    "project.section.dev": "개발 내용",
 
     // Activity
     "activity.title": "활동",
@@ -106,6 +113,13 @@ export const translations = {
     "projects.title": "Projects",
     "projects.subtitle": "Projects I've worked on so far",
     "projects.wip": "This page is currently under construction.",
+    "project.detail.intro": "About",
+    "project.detail.features": "Key Features",
+
+    // Project detail
+    "project.section.intro": "Introduction",
+    "project.section.features": "Key Features",
+    "project.section.dev": "Development",
 
     // Activity
     "activity.title": "Activities",
