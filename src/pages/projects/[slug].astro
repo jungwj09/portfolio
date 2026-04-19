@@ -130,55 +130,67 @@ const { project } = Astro.props as { project: any };
 
       <section>
         <h2
-          class="text-white font-bold mb-4 pb-3 border-b border-white/10"
+          class="text-white font-bold mb-5 pb-3 border-b border-white/10"
           style="font-size: 20px;"
           data-i18n="project.section.features"
         >
           주요 기능
         </h2>
-        <ul class="flex flex-col gap-3" data-i18n-project-list="features">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-3"
+          data-i18n-project-list="features"
+        >
           {
             (project.features as string[]).map((f: string) => (
-              <li class="flex items-start gap-3">
-                <span class="mt-1.75 w-1.5 h-1.5 rounded-full bg-[#4086E6] shrink-0" />
+              <div class="feature-card flex items-start gap-3 px-4 py-3.5 rounded-xl border border-white/8 bg-white/3">
+                <span class="mt-0.5 text-[#4086E6] text-lg leading-none shrink-0">
+                  ✦
+                </span>
                 <span
                   class="text-[#C0C0C0] leading-relaxed"
-                  style="font-size: 16px;"
+                  style="font-size: 15px;"
                 >
                   {f}
                 </span>
-              </li>
+              </div>
             ))
           }
-        </ul>
+        </div>
       </section>
 
       <section class="mb-10 md:mb-16">
         <h2
-          class="text-white font-bold mb-4 pb-3 border-b border-white/10"
+          class="text-white font-bold mb-5 pb-3 border-b border-white/10"
           style="font-size: 20px;"
           data-i18n="project.section.dev"
         >
           개발 내용
         </h2>
-        <ul
-          class="flex flex-col gap-3"
+        <div
+          class="flex flex-col gap-2.5"
           data-i18n-project-list="devContributions"
         >
           {
-            (project.devContributions as string[]).map((d: string) => (
-              <li class="flex items-start gap-3">
-                <span class="mt-1.75 w-1.5 h-1.5 rounded-full bg-[#EAB736] shrink-0" />
-                <span
-                  class="text-[#C0C0C0] leading-relaxed"
-                  style="font-size: 16px;"
-                >
-                  {d}
-                </span>
-              </li>
-            ))
+            (project.devContributions as string[]).map(
+              (d: string, i: number) => (
+                <div class="dev-card flex items-start gap-4 px-4 py-3.5 rounded-xl border border-white/8 bg-white/3">
+                  <span
+                    class="shrink-0 w-6 h-6 rounded-md bg-[#EAB736]/15 border border-[#EAB736]/25 flex items-center justify-center text-[#EAB736] font-bold"
+                    style="font-size: 11px;"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    class="text-[#C0C0C0] leading-relaxed"
+                    style="font-size: 15px;"
+                  >
+                    {d}
+                  </span>
+                </div>
+              ),
+            )
           }
-        </ul>
+        </div>
       </section>
     </div>
   </main>
@@ -228,10 +240,14 @@ const { project } = Astro.props as { project: any };
         const key = ul.dataset.i18nProjectList!;
         const items = listMap[key];
         if (!items) return;
-        const lis = ul.querySelectorAll("li");
-        lis.forEach((li, i) => {
-          const span = li.querySelectorAll("span")[1];
-          if (span && items[i] !== undefined) span.textContent = items[i];
+        const cards = ul.querySelectorAll(
+          "div[class*='feature-card'], div[class*='dev-card'], div.flex.items-start",
+        );
+        // 각 카드의 마지막 span(텍스트)을 업데이트
+        ul.querySelectorAll<HTMLElement>(":scope > div").forEach((card, i) => {
+          const textSpan = card.querySelectorAll("span");
+          const last = textSpan[textSpan.length - 1];
+          if (last && items[i] !== undefined) last.textContent = items[i];
         });
       });
 

@@ -26,16 +26,16 @@
       "Admin page for managing seat information"
     ],
     "devContributions": [
-      "React 기반 프론트엔드 전체 설계 및 구현",
-      "Electron을 활용한 데스크탑 앱 패키징 및 IPC 통신 구현",
-      "좌석 배치도 SVG 렌더링 및 인터랙션 구현",
-      "관리자 대시보드 UI 개발"
+      "React 기반 프론트엔드 전체 구조를 설계하고 개발했습니다.",
+      "Electron을 활용해 데스크탑 앱을 패키징하고 IPC 통신을 구현했습니다.",
+      "좌석 배치도를 SVG로 렌더링하고 인터랙션을 구현했습니다.",
+      "관리자 대시보드 UI를 개발했습니다."
     ],
     "devContributions_en": [
-      "Full frontend architecture and implementation with React",
-      "Desktop app packaging with Electron and IPC communication",
-      "SVG-based seating chart rendering and interactions",
-      "Admin dashboard UI development"
+      "Designed and built the full frontend architecture with React.",
+      "Packaged the desktop app with Electron and implemented IPC communication.",
+      "Rendered the seating chart as SVG and built interactive behaviors.",
+      "Developed the admin dashboard UI."
     ]
   },
   {
@@ -65,16 +65,16 @@
       "Personal growth record timeline"
     ],
     "devContributions": [
-      "Next.js App Router 기반 전체 프론트엔드 아키텍처 설계",
-      "AI 피드백 결과 시각화 UI 구현",
-      "커뮤니티 게시판 컴포넌트 개발",
-      "Tailwind CSS 기반 디자인 시스템 구축"
+      "Next.js App Router 기반으로 프론트엔드 전체 아키텍처를 설계했습니다.",
+      "AI 피드백 결과를 시각화하는 UI를 개발했습니다.",
+      "커뮤니티 게시판 컴포넌트를 개발했습니다.",
+      "Tailwind CSS 기반 디자인 시스템을 구축했습니다."
     ],
     "devContributions_en": [
-      "Full frontend architecture design with Next.js App Router",
-      "AI feedback result visualization UI",
-      "Community board component development",
-      "Design system setup with Tailwind CSS"
+      "Designed the full frontend architecture with Next.js App Router.",
+      "Built the AI feedback result visualization UI.",
+      "Developed the community board component.",
+      "Set up a design system with Tailwind CSS."
     ]
   },
   {
@@ -104,16 +104,16 @@
       "Fraud report and case registration system"
     ],
     "devContributions": [
-      "Next.js 기반 서비스 전체 프론트엔드 개발",
-      "피해 사례 등록 멀티스텝 폼 구현",
-      "매칭 결과 및 그룹 현황 시각화 UI 개발",
-      "반응형 레이아웃 및 접근성 개선"
+      "Next.js 기반으로 서비스 전체 프론트엔드를 개발했습니다.",
+      "피해 사례 등록을 위한 멀티스텝 폼을 개발했습니다.",
+      "매칭 결과 및 그룹 현황을 시각화하는 UI를 개발했습니다.",
+      "반응형 레이아웃을 구성하고 접근성을 개선했습니다."
     ],
     "devContributions_en": [
-      "Full frontend development with Next.js",
-      "Multi-step form for fraud case registration",
-      "Matching result and group status visualization UI",
-      "Responsive layout and accessibility improvements"
+      "Developed the full frontend with Next.js.",
+      "Built a multi-step form for fraud case registration.",
+      "Designed the matching result and group status visualization UI.",
+      "Implemented responsive layout and improved accessibility."
     ]
   },
   {
@@ -143,16 +143,16 @@
       "Project schedule and role management"
     ],
     "devContributions": [
-      "Next.js App Router 기반 프론트엔드 전체 설계 및 구현",
-      "Supabase 실시간 구독을 활용한 팀 활동 피드 구현",
-      "AI 갈등 감지 결과 시각화 대시보드 개발",
-      "익명 피드백 UI 및 Supabase RLS 설계"
+      "Next.js App Router 기반으로 프론트엔드 전체를 설계하고 개발했습니다.",
+      "Supabase 실시간 구독을 활용해 팀 활동 피드를 구현했습니다.",
+      "AI 갈등 감지 결과를 시각화하는 대시보드를 개발했습니다.",
+      "익명 피드백 UI와 Supabase RLS 정책을 설계했습니다."
     ],
     "devContributions_en": [
-      "Full frontend architecture and implementation with Next.js App Router",
-      "Team activity feed using Supabase real-time subscriptions",
-      "AI conflict detection result visualization dashboard",
-      "Anonymous feedback UI and Supabase RLS design"
+      "Designed and developed the full frontend with Next.js App Router.",
+      "Built a team activity feed using Supabase real-time subscriptions.",
+      "Developed a dashboard to visualize AI conflict detection results.",
+      "Designed the anonymous feedback UI and Supabase RLS policies."
     ]
   },
   {
@@ -168,7 +168,7 @@
     "period_en": "Feb 2026 ~ Present",
     "github": "https://github.com/jungwj09/portfolio",
     "intro": "개발자로서의 역량과 경험을 효과적으로 소개하기 위해 직접 설계하고 개발한 포트폴리오 웹사이트입니다.\n\nAstro의 Islands Architecture를 기반으로 필요한 부분만 하이드레이션하여 성능을 최적화했으며, Canvas API를 활용해 별이 흐르는 배경 애니메이션을 직접 제작했습니다. 한국어/영어 다국어를 지원하며, 프로젝트·기술 스택·활동 등 섹션별로 콘텐츠를 체계적으로 구성했습니다. 모바일과 데스크탑 모두를 고려한 완전한 반응형 레이아웃으로 설계되었습니다.",
-   "intro_en": "A portfolio website I personally designed and developed to effectively showcase my skills and experience as a developer.\n\nBuilt on Astro's Islands Architecture to optimize performance by hydrating only the parts that need interactivity. I hand-crafted a drifting star background animation using the Canvas API, with Korean/English multilingual support and content organized into structured sections covering projects, tech stack, and activities. Designed with a fully responsive layout for both mobile and desktop.",
+    "intro_en": "A portfolio website I personally designed and developed to effectively showcase my skills and experience as a developer.\n\nBuilt on Astro's Islands Architecture to optimize performance by hydrating only the parts that need interactivity. I hand-crafted a drifting star background animation using the Canvas API, with Korean/English multilingual support and content organized into structured sections covering projects, tech stack, and activities. Designed with a fully responsive layout for both mobile and desktop.",
     "features": [
       "한국어/영어 다국어 지원 (i18n)",
       "별이 흐르는 Canvas 기반 배경 애니메이션",
@@ -184,18 +184,18 @@
       "Full responsive mobile support"
     ],
     "devContributions": [
-      "Astro Islands Architecture 기반 전체 설계 및 구현",
-      "i18n 시스템 직접 설계 (별도 라이브러리 없이 구현)",
-      "Canvas API를 활용한 별 배경 애니메이션 구현",
-      "Tailwind CSS 커스텀 테마 및 글로벌 스타일 설계",
-      "모바일/데스크탑 반응형 레이아웃 전체 구현"
+      "Astro Islands Architecture 기반으로 전체 구조를 설계하고 개발했습니다.",
+      "외부 라이브러리 없이 i18n 시스템을 직접 설계하고 구현했습니다.",
+      "Canvas API를 활용해 별 배경 애니메이션을 구현했습니다.",
+      "Tailwind CSS 커스텀 테마와 글로벌 스타일을 설계했습니다.",
+      "모바일/데스크탑 반응형 레이아웃 전체를 구성했습니다."
     ],
     "devContributions_en": [
-      "Full design and implementation based on Astro Islands Architecture",
-      "Custom i18n system built without external libraries",
-      "Star background animation using Canvas API",
-      "Tailwind CSS custom theme and global style design",
-      "Full responsive layout for mobile and desktop"
+      "Designed and built the full architecture based on Astro Islands Architecture.",
+      "Designed and implemented a custom i18n system without any external libraries.",
+      "Built a drifting star background animation using the Canvas API.",
+      "Designed a custom Tailwind CSS theme and global styles.",
+      "Implemented a fully responsive layout for both mobile and desktop."
     ]
   }
 ]
