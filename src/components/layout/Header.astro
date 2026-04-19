@@ -12,18 +12,22 @@ const navItems = [
 ---
 
 <!-- Desktop Header -->
-<header class="hidden md:flex w-full sticky top-0 left-0 right-0 h-[72px] items-center justify-between px-6 z-50 bg-[#000000] border-b border-[#1A1A1A]">
+<header
+  class="hidden md:flex w-full sticky top-0 left-0 right-0 h-18 items-center justify-between px-6 z-50 bg-[#000000] border-b border-[#1A1A1A]"
+>
   <a href="/" class="flex items-center">
-    <img src="/logo/logo.svg" alt="JungWJ" class="h-[35px] w-auto" />
+    <img src="/logo/logo.svg" alt="JungWJ" class="h-8.75 w-auto" />
   </a>
 
-  <nav class="w-full max-w-[600px] flex items-center justify-between text-base text-white/70">
+  <nav
+    class="w-full max-w-150 flex items-center justify-between text-base text-white/70"
+  >
     {
       navItems.map((item) => (
         <a
           href={item.href}
           data-i18n={item.i18n}
-          class="w-full max-w-[120px] text-center py-1.5 px-2 font-medium hover:border-b-2 hover:border-white transition-all"
+          class="w-full max-w-30 text-center py-1.5 px-2 font-medium hover:border-b-2 hover:border-white transition-all"
         >
           {item.label}
         </a>
@@ -37,9 +41,11 @@ const navItems = [
 </header>
 
 <!-- Mobile Header -->
-<header class="md:hidden w-full sticky top-0 left-0 right-0 h-[60px] flex items-center justify-between px-5 z-50 bg-[#000000] border-b border-[#1A1A1A]">
+<header
+  class="md:hidden w-full sticky top-0 left-0 right-0 h-15 flex items-center justify-between px-5 z-50 bg-[#000000] border-b border-[#1A1A1A]"
+>
   <a href="/" class="flex items-center">
-    <img src="/logo/logo.svg" alt="JungWJ" class="h-[35px] w-auto" />
+    <img src="/logo/logo.svg" alt="JungWJ" class="h-8.75 w-auto" />
   </a>
 
   <button id="mobile-menu-toggle" class="text-white p-2" aria-label="메뉴 열기">
@@ -51,7 +57,7 @@ const navItems = [
 <!-- Mobile Dropdown Menu -->
 <div
   id="mobile-menu"
-  class="md:hidden fixed top-[60px] left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-b border-[#1A1A1A] transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300"
+  class="md:hidden fixed top-15 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-b border-[#1A1A1A] transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300"
 >
   <nav class="flex flex-col py-4 px-5">
     {
@@ -84,13 +90,29 @@ const navItems = [
     isMenuOpen = !isMenuOpen;
 
     if (isMenuOpen) {
-      mobileMenu?.classList.remove("-translate-y-full", "opacity-0", "pointer-events-none");
-      mobileMenu?.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
+      mobileMenu?.classList.remove(
+        "-translate-y-full",
+        "opacity-0",
+        "pointer-events-none",
+      );
+      mobileMenu?.classList.add(
+        "translate-y-0",
+        "opacity-100",
+        "pointer-events-auto",
+      );
       iconOpen?.classList.add("hidden");
       iconClose?.classList.remove("hidden");
     } else {
-      mobileMenu?.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
-      mobileMenu?.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
+      mobileMenu?.classList.add(
+        "-translate-y-full",
+        "opacity-0",
+        "pointer-events-none",
+      );
+      mobileMenu?.classList.remove(
+        "translate-y-0",
+        "opacity-100",
+        "pointer-events-auto",
+      );
       iconOpen?.classList.remove("hidden");
       iconClose?.classList.add("hidden");
     }
