@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
 import TechBadge from "@/components/project/TechBadge.astro";
 import projects from "@/data/projects.json";
-import { ChevronLeft, Github, Calendar, Users } from "lucide-astro";
+import { ChevronLeft, Github, Calendar, Users, Link } from "lucide-astro";
 
 export function getStaticPaths() {
   return (projects as any[]).map((p) => ({
@@ -71,7 +71,7 @@ const { project } = Astro.props as { project: any };
 
         <div class="border-t border-white/10 mb-5"></div>
 
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-3">
           <div class="flex items-center gap-3">
             <Calendar size={16} class="text-[#828282] shrink-0" />
             <span
@@ -102,6 +102,23 @@ const { project } = Astro.props as { project: any };
                   style="font-size: 14px;"
                 >
                   {project.github.replace("https://", "")}
+                </a>
+              </div>
+            )
+          }
+
+          {
+            project.demo && (
+              <div class="flex items-center gap-3">
+                <Link size={16} class="text-[#828282] shrink-0" />
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-[#828282] hover:underline underline-offset-4 transition-colors break-all"
+                  style="font-size: 14px;"
+                >
+                  {project.demo.replace("https://", "")}
                 </a>
               </div>
             )
@@ -240,10 +257,6 @@ const { project } = Astro.props as { project: any };
         const key = ul.dataset.i18nProjectList!;
         const items = listMap[key];
         if (!items) return;
-        const cards = ul.querySelectorAll(
-          "div[class*='feature-card'], div[class*='dev-card'], div.flex.items-start",
-        );
-        // 각 카드의 마지막 span(텍스트)을 업데이트
         ul.querySelectorAll<HTMLElement>(":scope > div").forEach((card, i) => {
           const textSpan = card.querySelectorAll("span");
           const last = textSpan[textSpan.length - 1];
