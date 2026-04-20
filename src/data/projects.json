@@ -44,6 +44,7 @@
     "title_en": "TAPIE Typing Battle website",
     "description": "선린인터넷고 축제 '선린제'의 동아리마당에서, TAPIE의 체험 부스에서 운영된 타자대결 웹 사이트에요.",
     "description_en": "This is a typing competition website operated at the TAPIE experience booth in the club area of ​​the Sunrin Internet High School festival, 'Sunrinjae'.",
+    "thumbnail": "/images/projects/tapie-typing-battle.svg",
     "techStack": ["React", "Supabase"],
     "team": ["정우진"],
     "period": "2025년 9월 ~ 2025년 9월",
