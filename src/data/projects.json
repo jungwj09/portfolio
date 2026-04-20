@@ -39,6 +39,45 @@
     ]
   },
   {
+    "slug": "tapie-typing-battle",
+    "title": "TAPIE 타자대결 웹 사이트",
+    "title_en": "TAPIE Typing Battle website",
+    "description": "선린인터넷고 동아리 이름과 교가를 활용해 타자 실력을 겨루는 웹 기반 타이핑 게임이에요",
+    "description_en": "A web-based typing game where users compete using Sunrin Internet High School club names and the school anthem.",
+    "thumbnail": "/images/projects/tapie-typing-battle.svg",
+    "techStack": ["React", "Supabase"],
+    "team": ["정우진"],
+    "period": "2025년 9월 ~ 2025년 9월",
+    "period_en": "Sep 2025 ~ Sep 2025",
+    "github": "https://github.com/jungwj09/tapie-typing-battle",
+    "intro": "선린인터넷고 축제 ‘선린제’ 동아리마당에서, 웹앱 개발 동아리 TAPIE의 체험 부스를 위해 제작한 타자 대결 웹 사이트입니다.\n\n동아리 이름을 활용한 ‘낱말 대결’과 학교 교가를 활용한 ‘장문 대결’ 두 가지 모드로 구성되어 있으며, 게임 종료 후에는 WPM(분당 타수)기준으로 랭킹이 기록됩니다.\n\n행사 당일 부스를 방문한 학생들이 현장에서 직접 참여해 즐길 수 있었으며, 총 180명 이상의 사용자가 접속했습니다.",
+    "intro_en": "This is a typing game developed for TAPIE’s experience booth at the Sunrin Festival club fair.\n\nIt features two modes: a word mode using club names, and a long-text mode based on the school anthem. After each game, results are recorded in a ranking system based on WPM (words per minute).\n\nDuring the event, students visiting the booth were able to play the game on-site, resulting in over 180 total users.",
+    "features": [
+      "낱말 대결 / 장문 대결 두 가지 모드",
+      "WPM 기반 실시간 랭킹 시스템",
+      "실시간 타이핑 정오 시각화",
+      "Supabase 기반 랭킹 데이터 저장"
+    ],
+    "features_en": [
+      "Two game modes: word and long-text",
+      "WPM-based real-time ranking system",
+      "Real-time correct/incorrect typing visualization",
+      "Ranking data stored via Supabase"
+    ],
+    "devContributions": [
+      "React 기반으로 게임 전체 플로우(이름 입력 → 모드 선택 → 게임 → 랭킹)를 설계하고 개발했습니다.",
+      "커스텀 훅(useTimer, useTyping)으로 타이머와 타이핑 로직을 분리해 구조를 설계했습니다.",
+      "Supabase를 연동해 게임 결과를 저장하고 랭킹 페이지에서 실시간으로 불러오는 기능을 구현했습니다.",
+      "입력값과 목표 텍스트를 실시간 비교해 정오 여부를 시각적으로 피드백하는 UI를 개발했습니다."
+    ],
+    "devContributions_en": [
+      "Designed and built the full game flow with React: name input → mode selection → game → ranking.",
+      "Separated timer and typing logic into custom hooks (useTimer, useTyping) for a clean architecture.",
+      "Integrated Supabase to save game results and fetch ranking data on the ranking page.",
+      "Built a real-time visual feedback UI that compares input against the target text character by character."
+    ]
+  },
+  {
     "slug": "gitbyeo",
     "title": "깃벼",
     "title_en": "GitByeo",
@@ -153,6 +192,45 @@
       "Built a team activity feed using Supabase real-time subscriptions.",
       "Developed a dashboard to visualize AI conflict detection results.",
       "Designed the anonymous feedback UI and Supabase RLS policies."
+    ]
+  },
+  {
+    "slug": "korean-csat-countdown",
+    "title": "수능 카운트다운",
+    "title_en": "Korean CSAT Countdown",
+    "description": "수험생들이 공부할 때 옆에 띄워두고, 줄어드는 시간을 보며 긴장감과 동기를 동시에 얻을 수 있도록 만든 수능 카운트다운 웹사이트에요.",
+    "description_en": "A CSAT countdown website designed for students to keep open while studying — watching time tick down to stay focused and motivated at the same time.",
+    "thumbnail": "/images/projects/korean-csat-countdown.svg",
+    "techStack": ["React", "TypeScript"],
+    "team": ["정우진"],
+    "period": "2025년 2월 ~ 2025년 2월",
+    "period_en": "Feb 2025 ~ Feb 2025",
+    "github": "https://github.com/jungwj09/korean-csat-countdown",
+    "intro": "수험생들이 공부할 때 아이패드나 핸드폰에 띄워두고, 앞에 세워놓은 채 공부하다 보면 의지가 불타오를 수 있도록 만든 수능 카운트다운 웹사이트입니다.\n\n밀리초 단위로 실시간 감소하는 타이머로 지금 이 순간의 급박함을 느낄 수 있고, 주기적으로 바뀌는 응원 메시지로 공부 의지를 이어갈 수 있습니다.\n\nURL 파라미터로 출생연도 상태를 관리해, 링크를 공유했을 때 선택한 연도가 그대로 유지됩니다. 수능 날짜는 '11월 셋째 목요일 오전 8시 10분'이라는 공식 기준으로 매년 자동 산출됩니다.",
+    "intro_en": "A CSAT countdown website built so students can prop up their phone or iPad while studying and feel the drive to keep going.\n\nA millisecond-level timer delivers a real sense of urgency as time visibly drains away, while motivational messages that rotate every few seconds help sustain the will to study.\n\nYear selection is managed through URL parameters, so sharing a link preserves the selected birth year. The exam date is automatically calculated each year based on the official rule: the third Thursday of November at 8:10 AM.",
+    "features": [
+      "밀리초 단위 실시간 카운트다운",
+      "출생연도별 수능 날짜 자동 계산",
+      "주기적으로 바뀌는 응원 메시지",
+      "URL 파라미터 기반 연도 상태 유지"
+    ],
+    "features_en": [
+      "Real-time millisecond countdown",
+      "Automatic CSAT date calculation by birth year",
+      "Rotating motivational messages",
+      "Year state persistence via URL parameters"
+    ],
+    "devContributions": [
+      "11월 셋째 목요일을 기준으로 수능 날짜를 자동 산출하는 로직을 구현했습니다.",
+      "URL 파라미터로 연도 상태를 관리하고 브라우저 뒤로가기/앞으로가기에 대응했습니다.",
+      "커스텀 훅으로 카운트다운과 URL 파라미터 로직을 분리해 구조를 설계했습니다.",
+      "Cloudflare Pages로 배포했습니다."
+    ],
+    "devContributions_en": [
+      "Implemented logic to automatically calculate the CSAT date as the third Thursday of November.",
+      "Managed year state via URL parameters with support for browser back/forward navigation.",
+      "Separated countdown and URL parameter logic into custom hooks for a clean architecture.",
+      "Deployed on Cloudflare Pages."
     ]
   },
   {
